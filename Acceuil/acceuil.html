@@ -117,7 +117,7 @@
 	};
 	function exportLocalStorage() {
 		const file = new Blob(
-			[JSON.stringify(lovcalStorage.getItem('aanonces'), null, 2)],
+			[JSON.stringify(localStorage.getItem('annonces'), null, 2)],
 			{ type: "application/json" }
 		);
 		const link = document.createElement("a");
