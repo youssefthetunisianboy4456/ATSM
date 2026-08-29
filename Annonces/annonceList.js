@@ -1,8 +1,8 @@
-async function loadAnnonces() {
+export async function loadAnnonces() {
   const database = supabase.createClient(
   "https://ngbsaqvegvwgqiyslaiz.supabase.co",
   "sb_publishable_rgqf_21dm23108ZfCPMctA_cGqn2JXX"
-);
+  );
   const { data, error } = await database
     .from("annonces")
     .select("*")
