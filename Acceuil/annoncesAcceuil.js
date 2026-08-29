@@ -1,4 +1,5 @@
-let annonces = JSON.parse(localStorage.getItem('annonces')) || [];
+import {startWebsite} from "../Annonces/annonceList.js"
+startWebsite()
 export function fillAnnonces () {
 	let annonceText=''
 	annonces.forEach((annonce) => {

@@ -1,4 +1,5 @@
-const annonces=JSON.parse(localStorage.getItem('annonces')) || []
+import {startWebsite} from "../Annonces/annonceList.js"
+startWebsite()
 const requestSavoirPlus = new URLSearchParams(window.location.search);
 const savoirPlusId = requestSavoirPlus.get('id');
 
