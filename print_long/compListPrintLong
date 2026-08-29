@@ -1,0 +1,7 @@
+x=""
+y=input("")
+while (y!="stop") :
+    f=input('cp')
+    x+="<div>"+f+"</div> \n"
+    y=input()
+print(x)

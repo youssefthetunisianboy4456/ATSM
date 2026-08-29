@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IMO results</title>
+</head>
+<link rel="stylesheet" href="../../Style/general-style.css">
+<style>
+	.big-imo{
+		display: grid;
+		grid-template-columns: 6% 20% 16% 14% 4% 9% 10% 6% 14%;
+		border: 1px solid black;
+	}
+	.big-imo div{
+		text-align: center;
+		border-left: 1px solid black;
+	}
+	.imo.an{
+		color: black;
+	}
+	.imo.rang-International{
+		color: black;
+	}
+	.imo-rang-africain{
+		color: black;
+	}
+	.imo-rang-arabe{
+		color: black;
+	}
+	.imo-or{
+		color: black;
+	}
+	.imo-argent{
+		color: black;
+	}
+	.imo-bronze{
+		color: black;
+	}
+	.imo-hm{
+		color: black;
+	}
+	.imo-score-total{
+		color: black;
+	}
+	.titre-resultats{
+		text-align: center;
+	}
+	</style>
+<body>
+	<header class="x">
+			<div class="logo">
+				<a  href="../../Acceuil/acceuil.html">
+					<img src="../../Images/atsm.jpeg"class="image-main">
+				</a>
+			</div>
+			 <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Toggle navigation">
+   				 ☰
+			</button>
+			<nav class="nav-links">
+				<a class="big-link" href="../../Compétitons/comp.html">
+					Compétitons et résultats
+				</a>
+				<a class="big-link" href="../../Annonces/annonce.html">
+					Annonces
+				</a>
+				<a class="big-link" href="../../Mission/mission.html">
+					Qui sommes nous?
+				</a>
+				<a class="big-link" href="../../Partner/partner.html">
+					Nos Partenaires
+				</a>
+				<a class="big-link" href="../../Contact/contact.html">
+					Contact
+				</a>
+			</nav>
+	</header>
+	<div class="titre"><h1 class="titre-resultats">Résultats de la délégation tunisienne aux olympiades internationales de mathématiques</h1></div>
+	<div class="resultats-imo">
+		<div class="big-imo big-imo0">
+			<div class="imo-an imo0-an">
+				<div>An</div>
+			</div>
+			<div class="imo-rang-international imo0-rang-international">
+				<div>Rang International</div>
+			</div>
+			<div class="imo-rang-africain imo0-rang-africain">
+				<div>Rang Africain</div>
+			</div>
+			<div class="imo-rang-arabe imo0-rang-arabe">
+				<div>Rang Arabe</div>
+			</div>
+			<div class="imo-or imo0-or">
+				<div>Or</div>
+			</div>
+			<div class="imo-argent imo0-argent">
+				<div>Argent</div>
+			</div>
+			<div class="imo-bronze imo0-bronze">
+				<div>Bronze</div>
+			</div>
+			<div class="imo-score-total imo0-score-total">
+				<div >Score total</div>
+			</div>
+		</div>
+	</div>
+<script type="module" src="./imo.js"></script>
+<script>
+	function toggleMenu() {
+		const menuToggle = document.getElementById("menuToggle");
+		const navLinks = document.querySelector(".nav-links");
+		navLinks.classList.toggle("active");
+
+		if (navLinks.classList.contains("active")) {
+			menuToggle.textContent = "✕";
+		} else {
+			menuToggle.textContent = "☰";
+		}
+	};
+</script>
+</body>
+
+</html>

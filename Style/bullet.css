@@ -1,0 +1,15 @@
+.comp-list{
+		display: list-item;
+		list-style: none; /* Remove default bullets */
+		padding-left: 0;
+	}
+.comp-list div {
+    padding-left: 1.5em; /* Space for custom bullet */
+    position: relative;
+    }
+.comp-list div::before {
+    content: "★"; /* Your custom symbol */
+    position: absolute;
+    left: 0;
+    color: gold;
+}

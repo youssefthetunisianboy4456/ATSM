@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Notre missions</title>
+</head>
+<link rel="stylesheet" href="../Style/general-style.css">
+<body>
+	<header class="x">
+			<div class="logo">
+				<a  href="../Acceuil/acceuil.html">
+					<img src="../Images/atsm.jpeg"class="image-main">
+				</a>
+			</div>
+			 <button class="menu-toggle" onclick="toggleMenu()" id="menuToggle" aria-label="Toggle navigation">
+   				 ☰
+			</button>
+			<nav class="nav-links">
+				<a class="big-link" href="../Compétitons/comp.html">
+					Compétitons et résultats
+				</a>
+				<a class="big-link" href="../Annonces/annonce.html">
+					Annonces
+				</a>
+				<a class="big-link" href="../Mission/mission.html">
+					Qui sommes nous?
+				</a>
+				<a class="big-link" href="../Partner/partner.html">
+					Nos Partenaires
+				</a>
+				<a class="big-link" href="../Contact/contact.html">
+					Contact
+				</a>
+			</nav>
+	</header>
+	<section class="presentation">
+    <h1>PRÉSENTATION</h1>
+    <p>Fondée le 31 Janvier 1968, l'ATSM est membre fondateur depuis 1976 de l'Union Mathématique Africaine et membre depuis 1993 du Comité International des Jeux Mathématiques (C.I.J.M).</p>
+    <h2>FICHE TECHNIQUE</h2>
+    <h3>▪ Structures :</h3>
+    <p>Assemblée Générale - Bureau National - Régionales - Bureau National élargi.</p>
+    <p>Les activités de l'A.T.S.M. s'adressent à tous ceux qui s'intéressent à l'enseignement et à la culture scientifique, un large public de la Maternelle à l'Université, enseignants ou non.</p>
+    <h3>▪ Activités :</h3>
+    <p>L'A.T.S.M. organise annuellement les Journées Nationales, le Concours National de Mathématiques à l'intention des meilleurs élèves de 3<sup>e</sup> année de la section mathématiques et les phases éliminatoires des Jeux Mathématiques et logiques.</p>
+    <p>Elle participe régulièrement à la Finale Internationale des Jeux Mathématiques et Logiques organisée par la F.F.J.M., au Salon Culture et Jeux Mathématiques et à la Coupe inter-régionale Euromath organisés par le C.I.J.M.</p>
+    <p>Elle participe annuellement aux <em>Olympiades Internationales ou Africaines de Mathématiques</em> (I.M.O., P.A.M.O). Elle participe au <em>Kangourou Sans Frontières de Mathématiques</em> (K.S.F.).</p>
+    <p>L'A.T.S.M. organise aussi :</p>
+    <ul>
+        <li>Des colloques et des rencontres à l'échelle nationale ou internationale, congrès, écoles d'été ou rencontres.</li>
+        <li>Des journées de formation sur la culture mathématique et les compétitions.</li>
+    </ul>
+</section>
+	<script>
+		function toggleMenu() {
+			const menuToggle = document.getElementById("menuToggle");
+			const navLinks = document.querySelector(".nav-links");
+			navLinks.classList.toggle("active");
+
+			if (navLinks.classList.contains("active")) {
+				menuToggle.textContent = "✕";
+			} else {
+				menuToggle.textContent = "☰";
+			}
+		};
+	</script>
+	</body>
+</html>

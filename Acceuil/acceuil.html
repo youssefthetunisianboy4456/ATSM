@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ATSM</title>
+</head>
+<link rel="stylesheet" href="../Style/general-style.css">
+<style>
+	.overall-div {
+		background-color: rgb(17, 77, 167);
+		display : grid;
+		grid-template-columns: auto;
+	}
+	.overall-div div{
+		color: white;
+		text-align: center;
+	}
+	.ATSM1 {
+		font-weight: bold;
+		font-size: 40px/*55px*/;
+		/*font-family: 'Times New Roman', Times, serif;*/
+	}
+	.ATSM2{
+		font-weight: 0;
+		font-size: 25px;
+	}
+	.ATSM3{
+		font-size: 25px;
+		background-color: red;
+		width: 25%;
+		margin-left: 37.5%;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		border-radius: 5px;
+	} 
+	.ATSM3 a{
+		color: white;
+		text-decoration-line: none;
+	} 
+	.annonces{
+		display: grid;
+		grid-template-columns: auto;
+		width: 100%;
+	}
+	.annonces div{
+		text-align: center;
+		width: 100%;
+	}
+	.annonce {
+		border : 0.1px solid rgb(150, 143, 143);
+	}
+	.annonce-titre{
+		font-size: 30px;
+		font-weight: bold;
+	}
+	.annonce-main-text{
+		font-size: 20px;
+	}
+	.all-annonces{
+		color: blue;
+		text-decoration: underline; 
+	}
+	.annonce-image{
+		padding-top: 10px;
+		width : 600px;
+		border-radius: 15px;
+	} 
+</style>
+<body>
+	<header class="x">
+			<div class="logo">
+				<a  href="acceuil.html">
+					<img src="../Images/atsm.jpeg"class="image-main">
+				</a>
+			</div>
+			 <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Toggle navigation">
+   				 ☰
+			</button>
+			<nav class="nav-links">
+				<a class="big-link" href="../Compétitons/comp.html">
+					Compétitons et résultats
+				</a>
+				<a class="big-link" href="../Annonces/annonce.html">
+					Annonces
+				</a>
+				<a class="big-link" href="../Mission/mission.html">
+					Qui sommes nous?
+				</a>
+				<a class="big-link" href="../Partner/partner.html">
+					Nos Partenaires
+				</a>
+				<a class="big-link" href="../Contact/contact.html">
+					Contact
+				</a>
+			</nav>
+	</header>
+	<div class="overall-div">
+		 <div class="ATSM1"> Association Tunisienne des Sciences Mathématiques	</div>
+		 <div class="ATSM2"> Développer les talents tunisiens pour représenter la Tunisie à l'international</div>
+		 <div class="ATSM3"> <a href="../Mission/mission.html">En savoir plus</a></div>
+	</div>
+	<div class="annonces" >
+		
+	</div>
+<script type="module" src="./annoncesAcceuil.js"></script>
+
+<script>
+	function toggleMenu() {
+		const menuToggle = document.getElementById("menuToggle");
+		const navLinks = document.querySelector(".nav-links");
+		navLinks.classList.toggle("active");
+
+		if (navLinks.classList.contains("active")) {
+			menuToggle.textContent = "✕";
+		} else {
+			menuToggle.textContent = "☰";
+		}
+	};
+	function exportLocalStorage() {
+		const file = new Blob(
+			[JSON.stringify(lovcalStorage.getItem('aanonces'), null, 2)],
+			{ type: "application/json" }
+		);
+		const link = document.createElement("a");
+		link.href = URL.createObjectURL(file);
+		link.download = "localStorage-data.json";
+		link.click();
+		URL.revokeObjectURL(link.href);
+	}
+</script>
+</body>
+</html>

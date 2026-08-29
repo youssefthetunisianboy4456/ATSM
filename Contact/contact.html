@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact</title>
+</head>
+<link rel="stylesheet" href="../Style/general-style.css">
+<body>
+	<header class="x">
+			<div class="logo">
+				<a  href="../Acceuil/acceuil.html">
+					<img src="../Images/atsm.jpeg"class="image-main">
+				</a>
+			</div>
+			 <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Toggle navigation">
+   				 ☰
+			</button>
+			<nav class="nav-links">
+				<a class="big-link" href="../Compétitons/comp.html">
+					Compétitons et résultats
+				</a>
+				<a class="big-link" href="../Annonces/annonce.html">
+					Annonces
+				</a>
+				<a class="big-link" href="../Mission/mission.html">
+					Qui sommes nous?
+				</a>
+				<a class="big-link" href="../Partner/partner.html">
+					Nos Partenaires
+				</a>
+				<a class="big-link" href="../Contact/contact.html">
+					Contact
+				</a>
+			</nav>
+	</header>
+	<script>
+		function toggleMenu() {
+			const menuToggle = document.getElementById("menuToggle");
+			const navLinks = document.querySelector(".nav-links");
+			navLinks.classList.toggle("active");
+
+			if (navLinks.classList.contains("active")) {
+				menuToggle.textContent = "✕";
+			} else {
+				menuToggle.textContent = "☰";
+			}
+		};
+	</script>
+	</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Modifier une annonce</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"></script>
+</head>
+<link rel="stylesheet" href="../Style/general-style.css">
+<style>
+    body {
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .br-ta {
+        width:98%;
+        display:grid;
+        grid-template-columns: 20% 70%;
+        border: 1px solid black;
+    }
+    .br-ta  br{
+        padding-left: 10px;
+    }
+    .br-ta textarea{
+        margin : 10px;
+        padding: 8px;
+        box-sizing: border-box;
+
+        resize: none;          /* optional: prevents manual resizing */
+
+        white-space: pre-wrap; /* keeps line breaks and allows wrapping */
+        overflow-wrap: break-word;
+
+        overflow-y: auto;      /* vertical scroll when needed */
+        overflow-x: hidden;    /* no horizontal scrollbar */
+    }
+    .fill{
+        height: 100px;
+
+        padding: 8px;
+        box-sizing: border-box;
+
+        resize: none;          /* optional: prevents manual resizing */
+
+        white-space: pre-wrap; /* keeps line breaks and allows wrapping */
+        overflow-wrap: break-word;
+
+        overflow-y: auto;      /* vertical scroll when needed */
+        overflow-x: hidden;    /* no horizontal scrollbar */
+    }
+    .input-latex-div {
+        display: grid;
+        grid-template-columns: 100%;
+        width: 100%;
+        padding: 0px;
+        margin: 5px;
+    }
+    .input-latex-div div{
+        text-align: center;
+    }
+    .br-ta-Latex {
+        grid-template-columns: 90%;
+        text-align : left;
+    }
+    header {
+        text-align: center;
+    }
+</style>
+<body>
+<header>
+    <h1> Modifier Annonce </h1>
+</header>
+<div class="input-latex-div">
+    <div class="br-ta">
+        <br>Titre :</br>
+        <textarea class="mainText c1"></textarea>
+    </div>
+    <div class="br-ta">
+        <br>Fichier de l'image :</br>
+        <textarea class="iamge c2"></textarea>
+    </div>
+    <div class="br-ta">
+        <br>Commentaire :</br>
+        <textarea class="subText c3"></textarea>
+    </div>
+    <div class="br-ta pressReport-div">
+        <br>Texte principal :</br>
+        <textarea class="fill pressReport c4" id="fill"></textarea></div>
+    <div class="br-ta-Latex br-ta Latex Preview"></div>
+    <div class="br-ta-Latex"><button class="alter">Modifier</button></div>
+</div>
+<script type="module" src="./modifAnnonceT.js">
+</script>
+
+
+</body>
+</html>
+
+
