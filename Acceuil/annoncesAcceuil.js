@@ -3,64 +3,45 @@ import { loadAnnonces } from "../Annonces/annonceList.js";
 export function fillAnnonces(annoncesToDisplay) {
   return annoncesToDisplay
     .map(annonce => `
-      <div class="annonce annonce${annonce.id}">
-        <div>
-          <img
-            src="../Images/${annonce.image}"
-            class="annonce-image"
-          >
-        </div>
-
-        <div class="annonce-titre">
-          ${annonce.mainText}
-        </div>
-
-        <div class="annonce-main-text">
-          ${annonce.subText}
-        </div>
-
-        <div class="savoir-plus savoir-plus-${annonce.id}">
-          <a
-            class="special-link"
-            href="../Annonces/singleAnnonce/singleAnnonce.html?id=${annonce.id}"
-          >
-            En savoir plus
-          </a>
-        </div>
-      </div>
+	  <article class="annonce-card annonce-card${annonce.id}">
+		<div class="annonce-image">
+			<img src="../Images/${annonce.image}">
+			<div class="annonce-date">
+				<strong>4</strong>
+				<span>Aout</span>
+				<span>2026</span>
+			</div>
+		</div>
+		<div class="annonce-content">
+			<h3>
+				${annonce.mainText}
+			</h3>
+			<p>
+				${annonce.subText}
+			</p>
+			<a href="../Annonces/singleAnnonce/singleAnnonce.html?id=${annonce.id}" class="savoir-plus-${annonce.id}">En savoir plus →</a>
+		</div>
+	</article>
     `)
     .join("");
 }
-
 async function startWebsite() {
 	// Wait for Supabase and receive the actual array
 	const annonces = (await loadAnnonces()).reverse();
 	let annonceText=''
 	// Select only the first two announcements
-	const displayedAnnonces = annonces.slice(0,2);
+	const displayedAnnonces = annonces.slice(0,3);
 	annonceText = fillAnnonces(displayedAnnonces);
-
-	if (annonces.length > 2) {
-		annonceText += `
-		<div class="all-annonces">
-			<a href="../Annonces/annonce.html">
-			Toutes les annonces
-			</a>
-		</div>
-		`;
-	}
-	
 	const container = document.querySelector(".annonces");
 
 	if (!container) {
 		console.error('No element with class "annonces" was found.');
 		return;
 	}
-
 	container.innerHTML = annonceText;
 }
-	startWebsite();
-	console.log(annonces)
+startWebsite();
+console.log(annonces)
 /*import {loadAnnonces,startWebsite} from "../Annonces/annonceList.js"
 const annonces=loadAnnonces();
 startWebsite();

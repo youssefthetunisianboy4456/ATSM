@@ -1,0 +1,154 @@
+.overall-div {
+    background-color: rgb(17, 77, 167);
+    display : grid;
+    grid-template-columns: auto;
+}
+.overall-div div{
+    color: white;
+    text-align: center;
+}
+.ATSM1 {
+    font-weight: bold;
+    font-size: 40px/*55px*/;
+    /*font-family: 'Times New Roman', Times, serif;*/
+}
+.ATSM2{
+    font-weight: 0;
+    font-size: 25px;
+}
+.ATSM3{
+    font-size: 25px;
+    background-color: red;
+    width: 25%;
+    margin-left: 37.5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+} 
+.ATSM3 a{
+    color: white;
+    text-decoration-line: none;
+} 
+.annonces-section {
+    padding: 110px 0;
+    background-color: white;
+}
+.annonces-container {
+    width: min(1180px,90%);
+    margin: auto;
+}
+.annonces-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 45px;
+}
+.all-annonces {
+    color: darkblue;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+.all-annonces:hover{
+    box-shadow: 0 16px 35px rgba(0,0,0.12);
+}
+.annonces-label {
+    color:	black;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+.title-line {
+    width: 65px;
+    height: 3px;
+    background: rgb(22, 26, 144);
+    margin: 18px 0 25px;
+}
+.annonces {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+.annonce-card{
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,.07);
+}
+.annonce-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 35px rgba(0,0,0.12);
+}
+.annonce-image{
+    height:240px;
+    position: relative;
+    overflow: hidden;
+}
+.annonce-image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform .4s; 
+}
+.annonce-card:hover .annonce-image img{
+    transform: scale(1.05);
+}
+.annonce-date{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background:rgb(22, 26, 144);
+    color:white;
+    min-width: 78px;
+    padding: 10px 13px;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+}
+.annonce-date strong{
+    font-size: 20px;
+}
+.annonce-date span{
+    font-size: 12px;
+}
+.annonce-content {
+    padding: 28px;
+}
+.annonce-content h3{
+    color:darkblue;
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 10px 0 15px;
+}
+.annonce-content p{
+    color: grey;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.annonce-content a {
+    color: darkblue;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-decoration: none;
+}
+.annonce-content a:hover{
+    text-decoration: underline;
+}
+@media (max-width: 900px) {
+    .annonces {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width:600px) {
+    .annonces-section{
+        padding: 75px 0;
+    }
+    .annonces-heading{
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .all-annonces{
+        margin:0
+    }
+    .annonces{
+        grid-template-columns: 1fr;
+    }
+}

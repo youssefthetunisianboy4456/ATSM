@@ -4,73 +4,7 @@
 	<title>ATSM</title>
 </head>
 <link rel="stylesheet" href="../Style/general-style.css">
-<style>
-	.overall-div {
-		background-color: rgb(17, 77, 167);
-		display : grid;
-		grid-template-columns: auto;
-	}
-	.overall-div div{
-		color: white;
-		text-align: center;
-	}
-	.ATSM1 {
-		font-weight: bold;
-		font-size: 40px/*55px*/;
-		/*font-family: 'Times New Roman', Times, serif;*/
-	}
-	.ATSM2{
-		font-weight: 0;
-		font-size: 25px;
-	}
-	.ATSM3{
-		font-size: 25px;
-		background-color: red;
-		width: 25%;
-		margin-left: 37.5%;
-		margin-top: 10px;
-		margin-bottom: 10px;
-		border-radius: 5px;
-	} 
-	.ATSM3 a{
-		color: white;
-		text-decoration-line: none;
-	} 
-	.annonces{
-		display: grid;
-		grid-template-columns: auto;
-		width: 100%;
-	}
-	.annonces div{
-		text-align: center;
-		width: 100%;
-	}
-	.annonce {
-		border : 0.1px solid rgb(150, 143, 143);
-	}
-	.annonce-titre{
-		font-size: 30px;
-		font-weight: bold;
-	}
-	.annonce-main-text{
-		font-size: 20px;
-	}
-	.all-annonces{
-		color: blue;
-		text-decoration: underline; 
-	}
-	.annonce-image{
-		padding-top: 10px;
-		width : 600px;
-		border-radius: 15px;
-	} 
-	@media (max-width: 900px) {
-		.annonce-image {
-			width : 70%;
-			border-radius: 30px;
-		}
-	}
-</style>
+<link rel="stylesheet" href="../Style/Acceuil.css">
 <body>
 	<header class="x">
 			<div class="logo">
@@ -99,13 +33,54 @@
 				</a>
 			</nav>
 	</header>
+	<section class="overall-section">
 	<div class="overall-div">
 		 <div class="ATSM1"> Association Tunisienne des Sciences Mathématiques	</div>
 		 <div class="ATSM2"> Développer les talents tunisiens pour représenter la Tunisie à l'international</div>
 		 <div class="ATSM3"> <a href="../Mission/mission.html">En savoir plus</a></div>
 	</div>
-	<div class="annonces" >
+	</section>
+	<section class="annonces-section">
+	<!--<div class="annonces" >
+	</div>-->
+	<div class="annonces-container">
+		<div class="annonces-heading">
+			<div>
+				<span class="annonces-label">
+					Actualités
+				</span>
+				<h2>
+					Les actualités plus récentes
+				</h2>
+				<a href="../Annonces/annonce.html" class="all-annonces">
+					Voir toutes les actualités →
+				</a>
+				<div class="title-line"></div>
+			</div>
+		</div>
+		<div>
+			<div class="annonces">
+				<!--<article class="annonce-card">
+					<div class="annonce-image">
+						<img src="../Images/fijm2026.png">
+						<div class="annonce-date">
+							<strong>4</strong>
+							<span>Aout</span>
+							<span>2026</span>
+						</div>
+					</div>
+					<h3>
+						FIJM 2026
+					</h3>
+					<p>
+						gsehouysnoivtev vojvghynvpiv rvryslevuyn reuicoyvneràc ucnocdnievyu sncioyoicd snuyon vsoniidyo ovsnidyo
+					</p>
+					<a href="../Annonces/singleAnnonce/singleAnnonce.html?id=3">En savoir plus →</a>
+				</article>-->
+			</div>
+		</div>
 	</div>
+	</section>
 <script type="module" src="./annoncesAcceuil.js"></script>
 
 <script>
