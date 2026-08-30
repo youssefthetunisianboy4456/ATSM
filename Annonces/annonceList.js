@@ -3,6 +3,7 @@ export async function loadAnnonces() {
   "https://ngbsaqvegvwgqiyslaiz.supabase.co",
   "sb_publishable_rgqf_21dm23108ZfCPMctA_cGqn2JXX"
   );
+  
   const { data, error } = await database
     .from("annonces")
     .select("*")
