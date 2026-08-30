@@ -61,11 +61,7 @@ body{
     font-size: 30px;
     cursor: pointer;
 }
-@media (max-width: 900px) {
-    .image-main {
-        width: 65px;
-        height: 65px;
-    }
+@media (max-width: 1080px) {
     .menu-toggle {
         display: block;
     }
@@ -127,5 +123,11 @@ body{
     }
     .big-link:last-child {
         border-bottom: none;
+    }
+}
+@media (max-width: 900px) {
+    .image-main {
+        width: 65px;
+        height: 65px;
     }
 }
