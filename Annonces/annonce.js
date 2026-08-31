@@ -8,7 +8,7 @@ export function fillAnnonces(annoncesToDisplay) {
 					<div class="annonce-text">
 						<h3>${annonce.mainText}</h3>
 						<p>${annonce.subText}</p>
-						<a href="./singleAnnonce/singleAnnonce.html?id=${annonce.id}">En savoir plus</a>
+						<a href="./singleAnnonce/singleAnnonce.html?id=${annonce.id}">En savoir plus →</a>
 					</div>
 			</article>
     `)
