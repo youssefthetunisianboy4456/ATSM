@@ -11,7 +11,7 @@ async function startWebsite() {
     const annonceDemande = annonces.find(news => news.id === savoirPlusId);
 
     if (annonceDemande) {
-        document.body.innerHTML+= `
+        document.querySelector('.annonce').innerHTML= `
         <div class="annonce">
             <div>
                 <h1 class="title">${annonceDemande.mainText}</h1>
