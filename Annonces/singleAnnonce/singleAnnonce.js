@@ -13,11 +13,14 @@ async function startWebsite() {
     if (annonceDemande) {
         document.querySelector('.annonce').innerHTML= `
         <div class="annonce">
-            <div>
-                <h1 class="title">${annonceDemande.mainText}</h1>
-            </div>
-            <div class="press-report">
-                <p>${annonceDemande.pressReport}</p> 
+            <div class="text">
+                <div>
+                    <h1 class="title">${annonceDemande.mainText}</h1>
+                    <div class="title-line"></div>
+                </div>
+                <div class="press-report">
+                    <p>${annonceDemande.pressReport}</p> 
+                </div>
             </div>
             <div class="div-image">
                 <img class="img" src="../../Images/${annonceDemande.image}"> 
