@@ -16,7 +16,7 @@ export function fillAnnonces(annoncesToDisplay) {
 }
 async function startWebsite() {
     // Wait for Supabase and receive the actual array
-    const annonces = (await loadAnnonces()).reverse();
+    const annonces = (await loadAnnonces());
     let annonceText=''
     annonceText = fillAnnonces(annonces);
     

@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 .overall {
+    /*animation-delay: 0.2s;*/
     min-height: 720px;
     position: relative;
     display:flex;

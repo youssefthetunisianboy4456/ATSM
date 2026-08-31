@@ -19,6 +19,11 @@ body{
 .special-link:hover {
     color: red;
 }
+/*.x {
+    opacity: 0;
+    transform: translateY(25px);
+    animation: appear 0.8s ease-out forwards;
+}*/
 .x {
     display: flex;
     align-items: center;
@@ -203,5 +208,16 @@ body{
      .footer-grid {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+}
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
