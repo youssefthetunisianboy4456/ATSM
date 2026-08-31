@@ -5,7 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Contact</title>
 </head>
+<html>
 <link rel="stylesheet" href="../Style/general-style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+	.contact-section {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		padding-left: 20px;
+		padding-right: 20px;
+		align-items: center;
+	}
+	.icon {
+		margin-top: 10px;
+		width: 70px;
+		height: 70px;
+		border-radius: 50%;
+		background-color: #102e91;
+		color: white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 30px;
+		margin-bottom: 20px;
+	}
+	.title-line {
+		width: 65px;
+		height: 3px;
+		background: rgb(22, 26, 144);
+	}
+	.contact-container{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 30px;
+	}
+	.contact-card{
+		padding-left: 10px;
+		padding-right: 10px;
+		align-items: center;
+		display:flex;
+		flex-direction: column;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.656);
+		border-radius: 10px;
+		justify-items: center;
+		color:#102e91;
+		text-decoration: none;
+	}
+	.contact-card:hover{
+		transform: translateY(-8px);
+		box-shadow: 0 14px 35px rgba(0,0,0,0.9);
+	}
+	.intro{
+		margin-bottom:30px;
+	}
+	@media( max-width:900px ) {
+		.contact-container{
+			display:flex;
+			flex-direction: column;
+			gap: 30px;
+		}
+	}
+</style>
 <body>
 	<header class="x">
 			<div class="logo">
@@ -35,9 +98,40 @@
 				</a>
 			</nav>
 	</header>
-	<section class="sous-construction">
-		<img src="../Images/sous-construction.png" alt="sous construction">
+	<section class="contact-section">
+		<h1>Contactez-nous</h1>
+		<div class="title-line"></div>
+		<p class="intro">
+			Pour toute question ou information, n'hésitez pas à nous contacter.
+		</p>
+		<div></div>
+		<div class="contact-container">
+			<a href="tel:+21692096882" class="contact-card">
+				<div class="icon">
+					<i class="fa-solid fa-phone"></i>
+				</div>
+				<h2>Téléphone</h2>
+				<p>+216 92 096 882</p>
+			</a>
+			<a href="mailto:secretairegeneralatsm@gmail.com" class="contact-card">
+				<div class="icon">
+					<i class="fa-solid fa-envelope"></i>
+				</div>
+				<h2>Email</h2>
+				<p>secretairegeneralatsm@gmail.com</p>
+			</a>
+			<a href="https://www.facebook.com/p/ATSM-Ben-Arous-100089070761300/" target="_blank" class="contact-card">
+				<div class="icon">
+					<i class="fa-brands fa-facebook"></i>
+				</div>
+				<h2>Facebook</h2>
+				<p>ATSM Ben Arous</p>			
+			</a>
+		</div>
 	</section>
+	<!-- <section class="sous-construction">
+		<img src="../Images/sous-construction.png" alt="sous construction">
+	</section> -->
 	<footer class="y">
 	<div class="footer-container footer-grid">
 		<div class="footer-text">
