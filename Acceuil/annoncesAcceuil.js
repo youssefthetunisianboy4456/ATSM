@@ -1,8 +1,6 @@
 import { loadAnnonces } from "../Annonces/annonceList.js";
-
-export function fillAnnonces(annoncesToDisplay) {
-  return annoncesToDisplay
-    .map(annonce => `
+function reserveType(annonces,types) {
+	return annonces.map(annonce => types.indexOf(annonce.type)!==-1 ? `
 	  <article class="annonce-card annonce-card${annonce.id}">
 		<div class="annonce-image">
 			<img src="../Images/${annonce.image}">
@@ -30,16 +28,15 @@ export function fillAnnonces(annoncesToDisplay) {
 			<a href="../Annonces/singleAnnonce/singleAnnonce.html?id=${annonce.id}" class="savoir-plus-${annonce.id}">En savoir plus →</a>
 		</div>
 	</article>
-    `)
-    .join("");
+    ` : '')
 }
 async function startWebsite() {
 	// Wait for Supabase and receive the actual array
 	const annonces = (await loadAnnonces());
 	let annonceText=''
 	// Select only the first two announcements
-	const displayedAnnonces = annonces.slice(0,3);
-	annonceText = fillAnnonces(displayedAnnonces);
+	const displayedAnnonces = reserveType(annonces,['Compétition']).slice(0,3);
+	annonceText = displayedAnnonces.join("");
 	const container = document.querySelector(".annonces");
 
 	if (!container) {
@@ -49,7 +46,7 @@ async function startWebsite() {
 	container.innerHTML = annonceText;
 }
 startWebsite();
-console.log(annonces)
+console.log(annonces,type)
 /*import {loadAnnonces,startWebsite} from "../Annonces/annonceList.js"
 const annonces=loadAnnonces();
 startWebsite();
