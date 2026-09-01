@@ -5,35 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Notre missions</title>
 </head>
-<link rel="stylesheet" href="../Style/general-style.css">
-<body>
-	<header class="x">
-			<div class="logo">
-				<a  href="../Acceuil/acceuil.html">
-					<img src="../Images/atsm.png"class="image-main">
-				</a>
-			</div>
-			 <button class="menu-toggle" onclick="toggleMenu()" id="menuToggle" aria-label="Toggle navigation">
-   				 ☰
-			</button>
-			<nav class="nav-links">
-				<a class="big-link" href="../Compétitons/comp.html">
-					Compétitons et résultats
-				</a>
-				<a class="big-link" href="../Annonces/annonce.html">
-					Annonces
-				</a>
-				<a class="big-link" href="../Mission/mission.html">
-					Qui sommes nous?
-				</a>
-				<a class="big-link" href="../Partner/partner.html">
-					Nos Partenaires
-				</a>
-				<a class="big-link" href="../Contact/contact.html">
-					Contact
-				</a>
-			</nav>
-	</header>
+<link rel="stylesheet" href="../Style/general-style.css"><script type="module">
+	import {HD} from '../Style/header+footer.js'
+	HD(1)
+</script>
+<body>>
 	<section class="presentation">
     <h1>PRÉSENTATION</h1>
     <p>Fondée le 31 Janvier 1968, l'ATSM est membre fondateur depuis 1976 de l'Union Mathématique Africaine et membre depuis 1993 du Comité International des Jeux Mathématiques (C.I.J.M).</p>
@@ -51,63 +27,6 @@
         <li>Des journées de formation sur la culture mathématique et les compétitions.</li>
     </ul>
 </section>
-<footer class="y">
-	<div class="footer-container footer-grid">
-		<div class="footer-text">
-			<p>
-				Association Tunisienne des Sciences Mathématiques (ATSM) 
-			</p>
-		</div>
-		<div class="footer-column">
-				<a href="../Acceuil/acceuil.html"> 
-					Acceuil
-				</a>
-				<a href="../Compétitons/comp.html">
-					Compétitons et résultats
-				</a>
-				<a href="../Annonces/annonce.html">
-					Annonces
-				</a>
-				<a href="../Mission/mission.html">
-					Qui sommes nous?
-				</a>
-				<a href="../Partner/partner.html">
-					Nos Partenaires
-				</a>
-				<a href="../Contact/contact.html">
-					Contact
-				</a>
-		</div>
-		<div class="footer-column">
-			<h3>Contact</h3>
-			<div class="contact-list">
-				<a href="tel:+21692096882" class="contact-link-f">
-				<div class="icon-f">
-					<i class="fa-solid fa-phone"></i><p>+216 92 09 6882</p>
-				</div>
-			</a>
-			<a href="mailto:secretairegeneralatsm@gmail.com" class="contact-link-f">
-				<div class="icon-f">
-					<i class="fa-solid fa-envelope"></i>
-					<p>secretairegeneralatsm@gmail.com</p>
-				</div>
-			</a>
-			<a href="https://www.facebook.com/p/ATSM-Ben-Arous-100089070761300/" target="_blank" class="contact-link-f">
-				<div class="icon-f">
-					<i class="fa-brands fa-facebook"></i>
-				</div>
-			</a>
-		</div>
-		<div class="footer-footer">
-			<p>
-				&copy; 2026 Association Tunisienne des Sciences Mathématiques. Tous droits réservés.
-			</p>
-			<p>
-				Réalisé par Youssef Halim Ajmi
-			</p>
-		</div>
-	</div>
-</footer>
 	<script>
 		function toggleMenu() {
 			const menuToggle = document.getElementById("menuToggle");
