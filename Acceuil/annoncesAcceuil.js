@@ -13,6 +13,14 @@ export function fillAnnonces(annoncesToDisplay) {
 			</div>
 		</div>
 		<div class="annonce-content">
+			<div class="type-date">
+				<span class="type">
+					${annonce.type}
+				</span>
+				<span class="small-date">
+					${annonce.date}
+				</span>
+			</div>
 			<h3>
 				${annonce.mainText}
 			</h3>

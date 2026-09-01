@@ -95,5 +95,5 @@ export function HD(x) {
 			</p>
 		</div>
 	</div>
-</footer>`   
+</footer>`  
 }

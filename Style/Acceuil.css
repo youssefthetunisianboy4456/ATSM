@@ -183,6 +183,21 @@
 .annonce-content a:hover{
     text-decoration: underline;
 }
+.type-date{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.small-date{
+    font-size: 14px;
+    color: #bbb;
+    font-style: italic;
+}
+.type{
+    font-size: 14px; 
+}
+
+
 @media (max-width: 900px) {
     .annonces {
         grid-template-columns: 1fr 1fr;
