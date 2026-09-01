@@ -12,9 +12,22 @@ export function HD(x) {
 				<a class="big-link" href="${x==0 ? '' : ("../").repeat(x) }Compétitons/comp.html">
 					Compétitons et résultats
 				</a>
+				<div class="hover-show">
 				<a class="big-link" href="${x==0 ? '' : ("../").repeat(x) }Annonces/annonce.html">
-					Annonces
+					Actualités
 				</a>
+				<div class="hover-links">
+					<a href="${x==0 ? '' : ("../").repeat(x) }Annonces" class="big-link hover-link">
+						Actualités passées
+					</a>
+					<a href="${x==0 ? '' : ("../").repeat(x) }Annonces"  class="big-link hover-link">
+						À venir
+					</a>
+					<a href="${x==0 ? '' : ("../").repeat(x) }Annonces"  class="big-link hover-link">
+						Autres
+					</a>
+				</div>
+				</div>
 				<a class="big-link" href="${x==0 ? '' : ("../").repeat(x) }Mission/mission.html">
 					Qui sommes nous?
 				</a>
@@ -40,7 +53,7 @@ export function HD(x) {
 					Compétitons et résultats
 				</a>
 				<a href="${x==0 ? '' : ("../").repeat(x) }Annonces/annonce.html">
-					Annonces
+					Actualités
 				</a>
 				<a href="${x==0 ? '' : ("../").repeat(x) }Mission/mission.html">
 					Qui sommes nous?
