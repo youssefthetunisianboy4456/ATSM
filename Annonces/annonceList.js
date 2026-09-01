@@ -1,20 +1,17 @@
 export function mapType(x) {
-  function U(f) {
-    return f[0].toUpperCase()+f.slice(1,f.length)
-  }
   switch (x) {
     case 'upcoming':
-      return U('à venir')
+      return 'À venir'
     case 'passed':
-      return U('actualités passées')
+      return 'Événement passé'
     case 'competiton':
-      return U('compétition')
+      return 'Compétition'
     case 'stage':
-      return U('bfddhytr')
+      return 'Stage de préparation'
     case 'release':
-      return U('nouveau defi')
+      return 'Nouveau defi'
     case 'test' :
-      return U('test de sélection')
+      return 'Test de sélection'
   }
 }
 export async function loadAnnonces() {
