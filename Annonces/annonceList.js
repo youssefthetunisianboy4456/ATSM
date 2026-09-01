@@ -1,20 +1,20 @@
-function U(x) {
-  return x[0].toUpperCase()+x.slice(1,x.length)
-}
-function mapType(x) {
+export function mapType(x) {
+  function U(f) {
+    return f[0].toUpperCase()+f.slice(1,f.length)
+  }
   switch (x) {
     case 'upcoming':
-      return 'à venir'
+      return U('à venir')
     case 'passed':
-      return 'actualités passées'
+      return U('actualités passées')
     case 'competiton':
-      return 'compétition'
+      return U('compétition')
     case 'stage':
-      return ''
+      return U('bfddhytr')
     case 'release':
-      return 'nouveau defi'
+      return U('nouveau defi')
     case 'test' :
-      return 'test de sélection'
+      return U('test de sélection')
   }
 }
 export async function loadAnnonces() {
@@ -38,7 +38,7 @@ export async function loadAnnonces() {
     subText: row.sub_text,
     pressReport: row.press_report,
     date: row.real_date,
-    type: U(mapType(row.type))
+    type: (row.type)
   }));
   return annonces;
 }

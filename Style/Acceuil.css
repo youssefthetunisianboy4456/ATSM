@@ -136,6 +136,14 @@
     object-fit: cover;
     transition: transform .4s; 
 }
+.separateur{
+    height: 30px;
+}
+.hide{
+    height: 0%;
+    width : 0%;
+    display: none;
+}
 .annonce-card:hover .annonce-image img{
     transform: scale(1.05);
 }

@@ -1,19 +1,14 @@
-import { loadAnnonces } from "../Annonces/annonceList.js";
+import { loadAnnonces , mapType} from "../Annonces/annonceList.js";
 function reserveType(annonces,types) {
-	return annonces.map(annonce => types.indexOf(annonce.type)!==-1 ? `
+	return annonces.filter(annonce=> types.indexOf(annonce.type)!==-1).map(annonce =>  `
 	  <article class="annonce-card annonce-card${annonce.id}">
-		<div class="annonce-image">
-			<img src="../Images/${annonce.image}">
-			<div class="annonce-date">
-				<strong>4</strong>
-				<span>Aout</span>
-				<span>2026</span>
-			</div>
+		<div class="annonce-image ${annonce.image==='' ? `hide`:``}">
+			${annonce.image==='' ? `<img class="hide">`:`<img src="../Images/${annonce.image}">`}
 		</div>
 		<div class="annonce-content">
 			<div class="type-date">
 				<span class="type">
-					${annonce.type}
+					${mapType(annonce.type)}
 				</span>
 				<span class="small-date">
 					${annonce.date}
@@ -28,59 +23,60 @@ function reserveType(annonces,types) {
 			<a href="../Annonces/singleAnnonce/singleAnnonce.html?id=${annonce.id}" class="savoir-plus-${annonce.id}">En savoir plus →</a>
 		</div>
 	</article>
-    ` : '')
+    ` )
 }
 async function startWebsite() {
 	// Wait for Supabase and receive the actual array
 	const annonces = (await loadAnnonces());
+	console.log('done');
 	let annonceText=''
-	// Select only the first two announcements
-	const displayedAnnonces = reserveType(annonces,['Compétition']).slice(0,3);
-	annonceText = displayedAnnonces.join("");
-	const container = document.querySelector(".annonces");
+	const annoncesPast = reserveType(annonces,['passed','competiton','release']).slice(0,3);
+	const annoncesFuture = reserveType(annonces,['upcoming','stage','test']).slice(0,3);
+	annonceText=`
+		<span class="annonces-label">
+					Actualités
+		</span>
+		<div class="annonces-heading">
+			<div>
+				<h2>
+					Les actualités plus récentes
+				</h2>
+				<a href="../Annonces/annonce.html" class="all-annonces">
+					Voir toutes les actualités →
+				</a>
+				<div class="title-line"></div>
+			</div>
+		</div>
+		<div>
+			<div class="annonces">
+				${annoncesPast.join("")}
+			</div>
+		</div>
+		<div class="separateur"></div>
+		<div class="annonces-heading">
+			<div>
+				<h2>
+					Actualités à venir
+				</h2>
+				<a href="../Annonces/annonce.html" class="all-annonces">
+					Voir toutes les actualités →
+				</a>
+				<div class="title-line"></div>
+			</div>
+		</div>
+		<div>
+			<div class="annonces">
+				${annoncesFuture.join("")}
+			</div>
+		</div>
+	`
+	//annonceText = displayedAnnonces.join("");
+	const container = document.querySelector(".annonces-container");
 
 	if (!container) {
-		console.error('No element with class "annonces" was found.');
+		console.error('No element with class "multi-annonces" was found.');
 		return;
 	}
 	container.innerHTML = annonceText;
 }
 startWebsite();
-console.log(annonces,type)
-/*import {loadAnnonces,startWebsite} from "../Annonces/annonceList.js"
-const annonces=loadAnnonces();
-startWebsite();
-export function fillAnnonces () {
-	let annonceText=''
-	annonces.forEach((annonce) => {
-		annonceText+=`
-			<div class="annonce annonce${annonce.id}">
-				<div ><img src="../Images/${annonce.image}" class="annonce-image"></div>
-				<div class="annonce-titre">${annonce.mainText}</div>
-				<div class="annonce-main-text">${annonce.subText}</div>
-				<div class="savoir-plus  savoir-plus-${annonce.id}"><a class="special-link" href="../Annonces/singleAnnonce/singleAnnonce.html?id=${annonce.id}">En savoir plus</a></div>
-			</div>`
-	});
-	return annonceText;
-}
-
-let annonceText='';
-
-if (annonces.length<=2) {
-	annonceText=fillAnnonces();
-} else {
-	for (let i = 0 ; i < 2; i++) {
-		let annonce=annonces[i];
-		annonceText+=`
-			<div class="annonce annonce${annonce.id}">
-				<div ><img src="../Images/${annonce.image}" class="annonce-image"></div>
-				<div class="annonce-titre">${annonce.mainText}</div>
-				<div class="annonce-main-text">${annonce.subText}</div>
-				<div class="savoir-plus savoir-plus-${annonce.id}"><a class="special-link" href="../Annonces/singleAnnonce/singleAnnonce.html?id=${annonce.id}">En savoir plus</a></div>
-			</div>`
-	}
-	annonceText+= '<div class="all-annonces"><a href="../Annonces/annonce.html"> Toutes les annonces</a></div>';
-};
-document.querySelector('.annonces').innerHTML=annonceText;
-*/
-//<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
