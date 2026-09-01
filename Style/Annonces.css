@@ -23,7 +23,6 @@
     gap:20px;
 }
 .annonce{
-
     display:flex;
     flex-direction: row;
     background: white;
@@ -39,14 +38,29 @@
     object-fit: cover;
     border-radius: 0;
 }
+.hide{
+    display: none;
+}
 .annonce-text{
     display:flex;
     flex-direction: column;
     padding-left: 10px;
     padding-bottom: 10px;
 }
-.annonce-text h3{
+.titre-date{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.titre-date h3{
     font-size: 20px;
+}
+.date{
+    font-style: italic;
+}
+.annonce-text span{
+    font-size: 14px;
+    color: #bbbbbbbe;
 }
 .annonce-text a{
     color:darkblue;

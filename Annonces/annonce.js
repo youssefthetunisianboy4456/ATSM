@@ -3,10 +3,10 @@ import { loadAnnonces , mapType } from "./annonceList.js";
 function reserveType(annonces,types) {
 	return annonces.filter(annonce=> types.indexOf(annonce.type)!==-1).map(annonce => `
 	    <article class="annonce">
-            <img class="annonce-image" src="../Images/${annonce.image}">
-            <div class="type-a">
+            ${annonce.image==='' ? `<img class="hide">`:`<img src="../Images/${annonce.image}">`}
             <div class="annonce-text">
-                <h3>${annonce.mainText}</h3>
+                <div class="titre-date"><h3>${annonce.mainText}</h3><span class="date">${annonce.date}</span></div>
+                <span> ${mapType(annonce.type)} </span>
                 <p>${annonce.subText}</p>
                 <a href="./singleAnnonce/singleAnnonce.html?id=${annonce.id}">En savoir plus →</a>
             </div>
