@@ -28,7 +28,6 @@ function reserveType(annonces,types) {
 async function startWebsite() {
 	// Wait for Supabase and receive the actual array
 	const annonces = (await loadAnnonces());
-	console.log('done');
 	let annonceText=''
 	const annoncesPast = reserveType(annonces,['passed','competiton','release']).slice(0,3);
 	const annoncesFuture = reserveType(annonces,['upcoming','stage','test']).slice(0,3);

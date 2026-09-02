@@ -13,18 +13,15 @@ export function HD(x) {
 					Compétitons et résultats
 				</a>
 				<div class="hover-show">
-				<a class="big-link" href="${x==0 ? '' : ("../").repeat(x) }Annonces/annonce.html">
+				<a class="big-link" href="${x==0 ? '' : ("../").repeat(x) }Annonces/annonceDouble.html">
 					Actualités
 				</a>
 				<div class="hover-links">
-					<a href="${x==0 ? '' : ("../").repeat(x) }Annonces" class="big-link hover-link">
+					<a href="${x==0 ? '' : ("../").repeat(x) }Annonces/typeAnnonce.html?title=passées&types=passed&types=competiton&types=release" class="big-link hover-link">
 						Actualités passées
 					</a>
-					<a href="${x==0 ? '' : ("../").repeat(x) }Annonces"  class="big-link hover-link">
+					<a href="${x==0 ? '' : ("../").repeat(x) }Annonces/typeAnnonce.html?title=à%20venir&types=upcoming&types=stage&types=test"  class="big-link hover-link">
 						À venir
-					</a>
-					<a href="${x==0 ? '' : ("../").repeat(x) }Annonces"  class="big-link hover-link">
-						Autres
 					</a>
 				</div>
 				</div>
@@ -52,7 +49,7 @@ export function HD(x) {
 				<a href="${x==0 ? '' : ("../").repeat(x) }Compétitons/comp.html">
 					Compétitons et résultats
 				</a>
-				<a href="${x==0 ? '' : ("../").repeat(x) }Annonces/annonce.html">
+				<a href="${x==0 ? '' : ("../").repeat(x) }Annonces/annonceDouble.html">
 					Actualités
 				</a>
 				<a href="${x==0 ? '' : ("../").repeat(x) }Mission/mission.html">

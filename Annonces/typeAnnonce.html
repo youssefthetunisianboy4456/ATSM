@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Annonces</title>
+</head>
+<link rel="stylesheet" href="../Style/general-style.css"><script type="module">
+	import {HD} from '../Style/header+footer.js'
+	HD(1)
+</script>
+<link rel="stylesheet" href="../Style/Annonces.css">
+<body>
+	<section class="annonces-section">
+		<div class="annonces-container">
+			<div class="annonces-heading">
+				<div>
+					<h1 class="type-title">
+						Toutes les annonces
+					</h1>
+					<div class="title-line"></div>
+				</div>
+			</div>
+			<div class="annonces" >
+			</div>
+	</section>
+	<script type="module" src="./typeAnnonce.js"></script>
+	<script>
+		function toggleMenu() {
+			const menuToggle = document.getElementById("menuToggle");
+			const navLinks = document.querySelector(".nav-links");
+
+			if (navLinks.classList.contains("active")) {
+				menuToggle.textContent = "✕";
+			} else {
+				menuToggle.textContent = "☰";
+			}
+		};
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</body>
+</html>

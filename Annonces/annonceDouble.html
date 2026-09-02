@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Annonces</title>
+</head>
+<link rel="stylesheet" href="../Style/general-style.css">
+<script type="module">
+	import {HD} from '../Style/header+footer.js'
+	HD(1)
+</script>
+<link rel="stylesheet" href="../Style/Acceuil.css">
+<style>
+	.top{
+		padding-top: 5%;
+		display:flex ;
+		flex-direction: column;
+		width: 100%;
+		align-items: center;
+		height: 10%;
+	}
+	.top a {
+		color: darkblue;
+		font-weight: bold;
+		margin-bottom: 25px;
+		text-decoration: none;
+	}
+	.top a:hover{
+		text-decoration: underline;
+	}
+</style>
+<body>
+	<section class="top">
+		<h2>Actualités</h2>
+		<div class="title-line"></div>
+		<a  href="./annonce.html"> Toutes les actualités →</a>
+	</section>
+	<section class="annonces-section">
+	<div class="annonces-container">
+	</div>
+	</section>
+<script type="module" src="./annonceDouble.js"></script>
+<script>
+	function toggleMenu() {
+		const menuToggle = document.getElementById("menuToggle");
+		const navLinks = document.querySelector(".nav-links");
+		navLinks.classList.toggle("active");
+
+		if (navLinks.classList.contains("active")) {
+			menuToggle.textContent = "✕";
+		} else {
+			menuToggle.textContent = "☰";
+		}
+	};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</body>
+</html>
