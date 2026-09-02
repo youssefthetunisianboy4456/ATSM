@@ -22,8 +22,8 @@ async function startWebsite() {
                     <p>${annonceDemande.pressReport}</p> 
                 </div>
             </div>
-            <div class="div-image">
-                <img class="img" src="../../Images/${annonceDemande.image}"> 
+            <div class="div-image ${annonceDemande.image==='' ? `hide`:``} ">
+                ${annonceDemande.image==='' ? `<img class="hide">`:`<img class="img" src="../../Images/${annonceDemande.image}">`}
             </div>
         </div>
         ` 
