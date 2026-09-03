@@ -31,6 +31,6 @@ async function startWebsite() {
     }
 
     container.innerHTML = annonceText;
-    document.querySelector('.type-title').innerHTML=`Toutes les annonces ${title}`
+    document.querySelector('.type-title').innerHTML=`Toutes les actualités ${title}`
 }
 startWebsite()
