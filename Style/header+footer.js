@@ -87,6 +87,7 @@ export function HD(x) {
 			<p>
 				&copy; 2026 Association Tunisienne des Sciences Mathématiques. Tous droits réservés.
 			</p>
+			<br></br>
 			<p>
 				Support technique : Youssef Halim Ajmi
 				<a href="mailto:youssef500ajmi@gmail.com" class="contact-link-f">
