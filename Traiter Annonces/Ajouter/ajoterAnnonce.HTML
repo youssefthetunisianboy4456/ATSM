@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ajouter une annonce</title>
-    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"></script>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ATSM</title>
 </head>
-<link rel="stylesheet" href="../Style/general-style.css"><script type="module">
-	import {HD} from '../Style/header+footer.js'
-	HD(1)
-</script>
-<style>
+ <style>
     body {
         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
@@ -67,6 +64,15 @@
     }
 </style>
 <body>
+    <h1>Welcome to the matrix</h1>
+    
+<link rel="stylesheet" href="../Style/general-style.css">
+<script type="module">
+	import {HD} from './Style/header+footer.js'
+	HD(1)
+</script>
+
+<body>
 <header>
     <h1> Nouvelle Annonce </h1>
 </header>
@@ -90,12 +96,19 @@
     <div class="br-ta pressReport-div">
         <br>Texte principal :</br>
         <textarea class="fill pressReport c4" id="fill"></textarea></div>
+    <div class="br-ta pressReport-div">
+        <br>Date :</br>
+        <textarea class="fill pressReport c5" id="fill"></textarea></div>
+    <div class="br-ta pressReport-div">
+        <br>Type :</br>
+        <textarea class="fill pressReport c6" id="fill"></textarea></div>
     <div class="br-ta-Latex br-ta Latex Preview"></div>
-    <div class="br-ta-Latex"><button class="add">Ajouter</button></div>
+    <div class="br-ta-Latex"><button class="add" onclick="update()">Ajouter</button></div>
 </div>
-<script type="module" src="./ajoterAnnonce.js">
+<script src="./ajoterAnnonce.js">
+
 </script>
+     <script src="../checkToken.js">
+    </script>
 </body>
 </html>
-
-

@@ -63,39 +63,14 @@
         text-align: center;
     }
 </style>
-<body>
-    
+<body>    
 <link rel="stylesheet" href="../Style/general-style.css">
 <script type="module">
 	import {HD} from './Style/header+footer.js'
 	HD(1)
 </script>
 
-<body>
-<div class="input-latex-div">
-    <div class="br-ta">
-        <br>Id :</br>
-        <select class="annonce-select c0"></select>
-    </div>
-    <div><button class="delete" onclick="deleteAnnonce()">Effacer</button></div>
-</div>
-<script type="module">
-import { loadAnnonces } from "../../Annonces/annonceList.js";
-async function showAnnonces() {
-    const select = document.querySelector('.annonce-select');
-    const annonces=await loadAnnonces();
-    annonces.forEach((annonce) => {
-        select.innerHTML += `
-            <option value="${annonce.id}">
-                ${annonce.mainText}
-            </option>
-        `;
-    });
-}
-showAnnonces();
-</script>
-    <script src="../checkToken.js">
-    </script>
-    <script src="./effacerAnnonce.js"></script>
+</body>
+<script src="./checkToken.js"></script>
 </body>
 </html>

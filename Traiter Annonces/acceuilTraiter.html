@@ -8,12 +8,16 @@
 	HD(1)
 </script>
 <style>
+	section{
+		display: flex;
+		flex-direction: column;
+	}
 	.x{
         grid-template-columns: 1fr 1fr 1fr;
     }
 </style>
 <body>
-	<header>
+	<section >
 		<div class="x">
 			<div class="x_div" >
 				<a class="big-link" href="./Ajouter/ajoterAnnonce.HTML">
@@ -31,9 +35,10 @@
 				</a>
 			</div>
 		</div>
-	</header>
+	</section>
 	<div class="overall-div">
         Ici, vous pouvez modifier vos annoces
 	</div>
+	<script src="./checkToken.js"></script>
 </body>
 </html>
