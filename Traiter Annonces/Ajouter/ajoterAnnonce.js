@@ -31,7 +31,7 @@ document.querySelector('.add').addEventListener('click', async function () {
                 'Authorization': `Bearer ${token}`
             },
 
-            body: newAnnonce
+            body: JSON.stringify(newAnnonce)
         }
     );
 })
