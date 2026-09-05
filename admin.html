@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ATSM</title>
+</head>
+<link rel="stylesheet" href="./Style/general-style.css">
+ <link rel="stylesheet" href="./Style/Acceuil.css">
+<body>
+    <h1>Welcome to the matrix</h1>
+     <script>
+        const token = sessionStorage.getItem('adminToken');
+
+        if (!token) {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>
