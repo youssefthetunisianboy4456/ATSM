@@ -6,7 +6,7 @@ function fillTextOfFrom(pClass,inputId) {
 },200);
 }
 fillTextOfFrom('Preview','fill');
-document.querySelector('.add').addEventListener('click', async function () {
+async function add() {
     let x=[]
     for (let i=0 ; i<7 ; i++) {
         x[i]=document.querySelector(`.c${i}`).value
@@ -34,4 +34,4 @@ document.querySelector('.add').addEventListener('click', async function () {
             body: JSON.stringify(newAnnonce)
         }
     );
-})
+}
