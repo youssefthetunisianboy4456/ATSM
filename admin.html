@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>ATSM</title>
 </head>
-<link rel="stylesheet" href="./Style/general-style.css">
  <link rel="stylesheet" href="./Style/Acceuil.css">
  <style>
     body {
@@ -112,7 +111,7 @@
 async function update() {
     let x=[];
     for (let i=0 ; i<7 ; i++) {
-        x[i]=document.querySelector(`.c${i}`).value
+        x.push(document.querySelector(`.c${i}`).value)
     }
     const newAnnonce= {
         id:x[0],
