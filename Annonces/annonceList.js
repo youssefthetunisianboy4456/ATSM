@@ -41,7 +41,7 @@ export function mapType(x) {
     date: row.real_date,
     type: (row.type)
   }));*/
-  return annonces;
+  return annonces.sort((a, b) => b.date.localeCompare(a.date));
 }
 export async function startWebsite() {
   const annonces = await loadAnnonces();
