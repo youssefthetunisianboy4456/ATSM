@@ -25,7 +25,7 @@ async function login() {
             body: JSON.stringify({ key })
         }
     );
-
+    console.log(`${key} ; key is sent`)
     if (!response.ok) {
         alert('Wrong key');
         return;
