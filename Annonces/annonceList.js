@@ -37,6 +37,7 @@ export async function loadAnnonces() {
     date: row.real_date,
     type: (row.type)
   }));
+  console.log(annonces);
   return annonces;
 }
 export async function startWebsite() {
