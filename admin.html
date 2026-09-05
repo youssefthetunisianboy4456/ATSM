@@ -124,7 +124,7 @@ async function update() {
         type:x[6]
     }
     const token = sessionStorage.getItem('adminToken');
-    const response = await fetch(
+    await fetch(
         'https://atsm-backend.onrender.com/add',
         {
             method: 'POST',
@@ -137,7 +137,6 @@ async function update() {
             body: JSON.stringify(newAnnonce)
         }
     );
-    console.log(response)
 }
 
 </script>
