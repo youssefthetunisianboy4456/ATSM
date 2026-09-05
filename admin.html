@@ -106,6 +106,15 @@
     <div class="br-ta-Latex br-ta Latex Preview"></div>
     <div class="br-ta-Latex"><button class="add" onclick="update()">Ajouter</button></div>
 </div>
+---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+<div class="input-latex-div">
+    <div class="br-ta">
+        <br>Id :</br>
+        <textarea class="Id c0"></textarea>
+    </div>
+    <div><button class="delete" onclick="deleteAnnonce()">Effacer</button></div>
+</div>
 <script>
 
 async function update() {
@@ -146,5 +155,10 @@ async function update() {
             window.location.href = 'login.html';
         }
     </script>
+<script>
+    async function deleteAnnonce() {
+        await fetch(`/delete/:${document.querySelector('.co').value}`, { method: 'DELETE' });
+    }
+</script>
 </body>
 </html>
