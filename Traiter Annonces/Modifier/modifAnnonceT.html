@@ -104,7 +104,7 @@
         <br>Type :</br>
         <textarea class="fill pressReport c6" id="fill"></textarea></div>
     <div class="br-ta-Latex br-ta Latex Preview"></div>
-    <div class="br-ta-Latex"><button class="add" onclick="update()" >Modifier</button></div>
+    <div class="br-ta-Latex"><button class="update" >Modifier</button></div>
 </div>
 <!--<script type="module" src="./modifAnnonceT.js">-->
 </script>
@@ -122,7 +122,7 @@
         document.querySelector(`.c${5}`).value=annonceTrouvee.date
         document.querySelector(`.c${6}`).value=annonceTrouvee.type
     }
-    async function update() {
+    document.querySelector('.update').addEventListener('click' , async function update() {
         let x=[]
         for (let i=0 ; i<7 ; i++) {
             x[i]=document.querySelector(`.c${i}`).value
@@ -149,8 +149,8 @@
                 body: JSON.stringify(newAnnonce)
             }
         );
-        location.reload()
-    }
+        //location.reload()
+    })
     fillTextArea();
 </script>
 
