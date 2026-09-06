@@ -106,7 +106,7 @@ async function showAnnonces() {
 showAnnonces();
 document.querySelector('.Trouver').addEventListener('click',  async function()  {
     const annonces=await loadAnnonces();
-    const id=document.querySelector('.Id').value
+    const id=document.querySelector('.annonce-select').value
     const annonceTrouvee = annonces.find(news => news.id === id);
     if (id==='' ||!annonceTrouvee) {
         alert('id-invalide')
