@@ -88,7 +88,7 @@
         <br>Id :</br>
         <select class="annonce-select c0"></select>
     </div>
-    <div><button class="Trouver" onclick="deleteAnnonce()">Trouver</button></div>
+    <div><button class="Trouver" onclick="goTo()">Trouver</button></div>
 </div>
 <script type="module">
 import { loadAnnonces } from "../../Annonces/annonceList.js";
@@ -104,6 +104,17 @@ async function showAnnonces() {
     });
 }
 showAnnonces();
+async function goTo() {
+    const annonces=await loadAnnonces();
+    const id=document.querySelector('.Id').value
+    const annonceTrouvee = annonces.find(news => news.id === id);
+    if (id==='' ||!annonceTrouvee) {
+        alert('id-invalide')
+    } else {
+       alert('id-non-invalide')
+       window.location.href=`./modifAnnonceT.html?id=${id}`
+    }
+}
 </script>
 <!--<script type="module" src="./modifierAnnonce.js"></script>-->
 
