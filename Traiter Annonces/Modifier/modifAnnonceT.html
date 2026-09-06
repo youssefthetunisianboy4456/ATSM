@@ -110,7 +110,7 @@
 </script>
 <script type="module">
     const requestModif = new URLSearchParams(window.location.search);
-    const Id = requestModif.get('id');
+    const id = requestModif.get('id');
     import { loadAnnonces } from "../../Annonces/annonceList.js";
     async function fillTextArea() {
         const annonces=await loadAnnonces()
@@ -137,7 +137,7 @@
         }
         const token = sessionStorage.getItem('adminToken');
         await fetch(
-            `https://atsm-backend.onrender.com/update/${Id}`,
+            `https://atsm-backend.onrender.com/update/${id}`,
             {
                 method: 'PUT',
 
