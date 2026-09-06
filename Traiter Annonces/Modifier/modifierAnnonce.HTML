@@ -82,17 +82,30 @@
 </style>
 <body>
 <header>
-    <h1> Modifier Annonce </h1>
-</header>
+     <h1>Supprimer une annonce</h1>
 <div class="input-latex-div">
     <div class="br-ta">
         <br>Id :</br>
-        <textarea class="Id c0"></textarea>
+        <select class="annonce-select c0"></select>
     </div>
-    <div><button class="Trouver">Trouver</button></div>
+    <div><button class="Trouver" onclick="deleteAnnonce()">Trouver</button></div>
 </div>
-<script type="module" src="./modifierAnnonce.js">
+<script type="module">
+import { loadAnnonces } from "../../Annonces/annonceList.js";
+async function showAnnonces() {
+    const select = document.querySelector('.annonce-select');
+    const annonces=await loadAnnonces();
+    annonces.forEach((annonce) => {
+        select.innerHTML += `
+            <option value="${annonce.id}">
+                ${annonce.mainText}
+            </option>
+        `;
+    });
+}
+showAnnonces();
 </script>
+<!--<script type="module" src="./modifierAnnonce.js"></script>-->
 
 
 </body>
