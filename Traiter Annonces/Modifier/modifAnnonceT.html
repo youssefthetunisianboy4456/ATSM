@@ -123,8 +123,8 @@
         document.querySelector(`.c${6}`).value=annonceTrouvee.type
     }
     document.querySelector('.update').addEventListener('click' , async function update() {
-        let x=[]
-        for (let i=0 ; i<7 ; i++) {
+        let x=['']
+        for (let i=1; i<7 ; i++) {
             x[i]=document.querySelector(`.c${i}`).value
         }
         const newAnnonce = {
