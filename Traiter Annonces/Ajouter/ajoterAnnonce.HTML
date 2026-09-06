@@ -64,12 +64,24 @@
     }
 </style>
 <body>
-    <h1>Welcome to the matrix</h1>
     
 <link rel="stylesheet" href="../../Style/general-style.css">
 <script type="module">
 	import {HD} from '../../Style/header+footer.js'
-	HD(1)
+	HD(2)
+</script>
+<script>
+    function toggleMenu() {
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("active");
+
+        if (navLinks.classList.contains("active")) {
+            menuToggle.textContent = "✕";
+        } else {
+            menuToggle.textContent = "☰";
+        }
+    };
 </script>
 
 <body>
