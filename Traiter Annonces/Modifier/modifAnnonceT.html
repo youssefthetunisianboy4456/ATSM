@@ -115,7 +115,6 @@
     async function fillTextArea() {
         const annonces=await loadAnnonces()
         const annonceTrouvee = annonces.find(news => news.id === id);
-        const cs=[]
         document.querySelector(`.c${1}`).value=annonceTrouvee.mainText
         document.querySelector(`.c${2}`).value=annonceTrouvee.image
         document.querySelector(`.c${3}`).value=annonceTrouvee.subTest
