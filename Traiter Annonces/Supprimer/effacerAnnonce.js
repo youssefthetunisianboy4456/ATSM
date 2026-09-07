@@ -1,10 +1,10 @@
 function closePopup(){
     document.getElementById('popup').style.display="none";
 }
-document.querySelector('.delete').addEventListener('click',function openPopup(){
+function openPopup(){
     document.getElementById('popup').style.display="flex";
     console.log('hello')
-})
+}
 async function deleteAnnonce() {
         const token=sessionStorage.getItem('adminToken')
         const response = await fetch(`https://atsm-backend.onrender.com/delete/${document.querySelector('.c0').value}`, 
