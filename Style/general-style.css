@@ -24,6 +24,25 @@ body{
     transform: translateY(25px);
     animation: appear 0.8s ease-out forwards;
 }*/
+.tr-button{
+        border: 1px black solid;
+        text-decoration: none;
+        font-size: 14px;
+        padding:14px 14px;
+        background-color: white;
+        color: black;
+        font-weight: bold;
+        border-radius: 3px;
+        transition:
+        background 0.2s,
+        color 0.2s,
+        transform 0.2s;
+    }
+.tr-button:hover{
+    background-color: darkblue;
+    color:white;
+    transform : translateY(-2px) ;
+} 
 .x {
     display: flex;
     align-items: center;
