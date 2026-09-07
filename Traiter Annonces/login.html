@@ -4,13 +4,50 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>ATSM</title>
+    <style>
+        body {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .Login-popup{
+            border-radius: 5px;
+            align-items: center;
+            justify-items: center;
+            text-align: center;
+            position:fixed;
+            top:25%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            display: flex;
+            flex-direction: column;
+            padding: 12px 12px;
+            box-shadow: 0 16px 35px rgba(0,0,0,.12);
+        }
+        .Login-popup input{
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding: 10px 10px;
+        }
+        .Login-popup button{
+            padding: 5px 10px;
+            border: 1px solid black;
+            background-color: white;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .Login-popup button:hover{
+            background-color: black;
+            color: white;
+        }
+    </style>
 </head>
 <link rel="stylesheet" href="./Style/general-style.css">
  <link rel="stylesheet" href="./Style/Acceuil.css">
 <body>
- <input type="password" id="key" placeholder="Admin key">
-<button onclick="login()">Login</button>
-
+<div class="Login-popup">
+    <h1> Tapez le mot de passe</h1>
+    <input type="password" id="key" placeholder="Mot de passe">
+    <button onclick="login()">Login</button>
+</div>
 <script>
 async function login() {
     const key = document.querySelector('#key').value;
