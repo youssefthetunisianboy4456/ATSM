@@ -3,6 +3,7 @@
 <head>
 	<title>Modifier une annonce</title>
     <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/4.1.1/spin.min.js"></script>
 </head>
 <link rel="stylesheet" href="../../Style/general-style.css">
 <link rel="stylesheet" href="../../Style/traiter-style.css">
@@ -66,6 +67,7 @@
     </div>
     <div class="br-ta-Latex"><button class="update bt" >Modifier</button></div>
 </div>
+<div id="loader"></div>
 <!--<script type="module" src="./modifAnnonceT.js">
 </script>-->
 <script src="../checkToken.js"></script>
@@ -137,10 +139,17 @@
             }});
             document.querySelector('.c2').innerHTML+=`<option value="">Pas d'image</option>`
         }
-    async function startWeb () {
-        await fillImages();
-        await fillTextArea();
-        fillTextArea();
+    async function startWeb() {
+        const spinner = new Spinner().spin(
+            document.getElementById('loader')
+        );
+        try {
+            await fillImages();
+            await fillTextArea();
+            fillTextArea();
+        } finally {
+            spinner.stop();
+        }
     }
     startWeb()
 </script>
