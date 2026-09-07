@@ -11,37 +11,44 @@
 	section{
 		display: flex;
 		flex-direction: column;
+		gap: 0px;
 	}
-	.x{
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-	.x_div{
+	nav {
+		display:flex;
+		flex-direction: column;
+		gap:5px;
+		width: 100%;
 		text-align: center;
+	}
+	nav a{
+		text-decoration: none;
+		color:rgb(28, 74, 175);
+		font-size: 18px;
+		font-weight: bold;
+	}
+	nav a:hover {
+		color: rgb(70, 172, 255);
+    	text-decoration-line: underline;
 	}
 </style>
 <body>
 	<section >
-		<div class="x">
-			<div class="x_div" >
-			 	<a class="big-link" href="./Ajouter/ajoterAnnonce.HTML">
-					Ajouter une annonce
-				</a>
-			</div>
-			<div class="x_div" >
-				<a class="big-link" href="./Modifier/modifierAnnonce.HTML">
-					Modifier une annonce
-				</a>
-			</div>
-			<div class="x_div" >
-				<a class="big-link" href="./Supprimer/effacerAnnonce.html">
-					Supprimer une annonce
-				</a>
-			</div>
+		<div class="overall-div">
+        Ici, vous pouvez modifier vos annoces, voici sont les actions que vous pouvez faire : 
 		</div>
+		<nav class="action_div" >
+			<a class="action-link" href="./Ajouter/ajoterAnnonce.HTML">
+				Ajouter une annonce
+			</a>
+			<a class="action-link" href="./Modifier/modifierAnnonce.HTML">
+				Modifier une annonce
+			</a>
+			<a class="action-link" href="./Supprimer/effacerAnnonce.html">
+				Supprimer une annonce
+			</a>
+		</nav>
 	</section>
-	<div class="overall-div">
-        Ici, vous pouvez modifier vos annoces
-	</div>
+	
 	<script src="./checkToken.js"></script>
 </body>
 </html>
