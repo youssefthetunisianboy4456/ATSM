@@ -137,8 +137,11 @@
         }});
         document.querySelector('.c2').innerHTML+=`<option value="">${''}</option>`
     }
-    fillImages();
-    fillTextArea();
+    async function startWeb () {
+        await fillImages();
+        fillTextArea();
+    }
+    startWeb()
 </script>
 
 </body>
