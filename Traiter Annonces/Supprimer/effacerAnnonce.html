@@ -83,6 +83,40 @@
         width:300px;
         text-align:center;
     }
+    .div-bp{
+        display: flex;
+        gap:10px;
+    }
+    .div-bp button {
+        border: none;
+        border-radius: 3px;
+        padding: 14px 27px;
+        font-size: 14px;
+        transition:
+            background 0.2s,
+            color 0.2s,
+            transform 0.2s;
+        text-decoration: none;
+    }
+    .div-bp button:hover {
+        transform: translateY(-2px);
+    }
+    .cancel {
+        color: black;
+        background-color: none;
+    }
+    .cancel:hover {
+        color: white;
+        background-color: black;
+    }
+    .proceed {
+        color: red;
+        background-color: white;
+    }
+    .proceed:hover{
+        color:white;
+        background-color: red;
+    }
 </style>
 <body>
     
@@ -116,7 +150,10 @@
 <div class="popup-background " id="popup">
     <div class="popup-box">
         <h2>Etes-vous surs d'effacer cette annonce</h2>
-        <button onclick="deleteAnnonce()">Effacer</button>
+        <div class="div-bp">
+            <button class="cancel" onclick="document.getElementById('popup').style.display='none'">Annuler</button>
+            <button class="proceed" onclick="deleteAnnonce()">Effacer</button>
+        </div>
     </div>
 </div>
 <script type="module">
