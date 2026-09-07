@@ -1,8 +1,8 @@
 function closePopup(){
-    document.getElementById('.popup').style.display="none";
+    document.getElementById('popup').style.display="none";
 }
 document.querySelector('.delete').addEventListener('click',function openPopup(){
-    document.getElementById('.popup').style.display="flex";
+    document.getElementById('popup').style.display="flex";
     console.log('hello')
 })
 async function deleteAnnonce() {
