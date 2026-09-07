@@ -49,7 +49,7 @@
     </div>
     <div class="br-ta">
         <br>Fichier de l'image :</br>
-        <textarea class="iamge c2"></textarea>
+        <select class="c2"></select>
     </div>
     <div class="br-ta">
         <br>Commentaire :</br>
@@ -112,6 +112,25 @@
         const result =await response.json()
         location.reload()
     }
+    async function fillImages() {
+        const token = sessionStorage.getItem('adminToken');
+        const images=await fetch(
+            'https://atsm-backend.onrender.com/imagesList',
+            {
+                method: 'GET',
+
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                },
+            }
+        );
+        images.forEach(image => {
+            document.querySelector('.c2').innerHTML+= `
+                <option value="${image}">${image}</option>
+            `
+        });
+    }
+    fillImages();
 </script>
 </body>
 </html>
