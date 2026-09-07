@@ -23,7 +23,7 @@ async function startWebsite() {
                 </div>
             </div>
             <div class="div-image ${annonceDemande.image==='' ? `hide`:``} ">
-                ${annonceDemande.image==='' ? `<img class="hide">`:`<img class="img" src="../../Images/${annonceDemande.image}">`}
+                ${annonceDemande.image==='' ? `<img class="hide">`:`<img class="img" src="https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/${annonceDemande.image}">`}
             </div>
         </div>
         ` 
