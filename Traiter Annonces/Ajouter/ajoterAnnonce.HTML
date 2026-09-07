@@ -114,8 +114,8 @@
     }
     async function fillImages() {
         const token = sessionStorage.getItem('adminToken');
-        const images=await fetch(
-            'https://atsm-backend.onrender.com/imagesList',
+        const response=await fetch(
+            'https://atsm-backend.onrender.com/imagesList', 
             {
                 method: 'GET',
 
@@ -124,6 +124,7 @@
                 },
             }
         );
+        const images =await response.json()
         images.forEach(image => {
             document.querySelector('.c2').innerHTML+= `
                 <option value="${image}">${image}</option>
