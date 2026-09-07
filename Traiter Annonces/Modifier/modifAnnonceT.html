@@ -130,10 +130,11 @@
         const images =await response.json()
         console.log(images)
         images.forEach(image => {
+        if (image.name[0]!==".") {
             document.querySelector('.c2').innerHTML+= `
                 <option value="${image.name}">${image.name}</option>
             `
-        });
+        }});
     }
     fillImages();
     fillTextArea();
