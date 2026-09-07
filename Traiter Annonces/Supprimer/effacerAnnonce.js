@@ -11,5 +11,5 @@ async function deleteAnnonce() {
         { method: 'DELETE' ,headers: { 'Authorization': `Bearer ${token}`} });
         const result = await response.json()
         closePopup()
-        location.reload()
+        location.reload() 
 }
