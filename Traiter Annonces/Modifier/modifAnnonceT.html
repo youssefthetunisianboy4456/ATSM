@@ -67,7 +67,6 @@
     </div>
     <div class="br-ta-Latex"><button class="update bt" >Modifier</button></div>
 </div>
-<div id="loader"></div>
 <!--<script type="module" src="./modifAnnonceT.js">
 </script>-->
 <script src="../checkToken.js"></script>
@@ -140,16 +139,9 @@
             document.querySelector('.c2').innerHTML+=`<option value="">Pas d'image</option>`
         }
     async function startWeb() {
-        const spinner = new Spinner().spin(
-            document.getElementById('loader')
-        );
-        try {
-            await fillImages();
-            await fillTextArea();
-            fillTextArea();
-        } finally {
-            spinner.stop();
-        }
+        await fillImages();
+        await fillTextArea();
+        fillTextArea();
     }
     startWeb()
 </script>
