@@ -45,5 +45,4 @@ export function mapType(x) {
 }
 export async function startWebsite() {
   const annonces = await loadAnnonces();
-  console.log(annonces);
 }

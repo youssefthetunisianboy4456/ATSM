@@ -3,7 +3,7 @@ function reserveType(annonces,types) {
 	return annonces.filter(annonce=> types.indexOf(annonce.type)!==-1).map(annonce =>  `
 	  <article class="annonce-card annonce-card${annonce.id}">
 		<div class="annonce-image ${annonce.image==='' ? `hide`:``}">
-			${annonce.image==='' ? `<img class="hide">`:`<img src=" https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/${annonce.image}">`}
+			${annonce.image==='' ? `<img class="hide">`:`<img src=" ${annonce.imageURL}">`}
 		</div>
 		<div class="annonce-content">
 			<div class="type-date">
