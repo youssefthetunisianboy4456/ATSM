@@ -35,7 +35,7 @@ body{
         border-radius: 3px;
         transition:
         background 0.2s,
-        color 0.2s,
+        color 0.2s, 
         transform 0.2s;
     }
 .tr-button:hover{
