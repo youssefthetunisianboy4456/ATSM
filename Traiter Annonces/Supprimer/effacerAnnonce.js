@@ -3,6 +3,7 @@ function closePopup(){
 }
 document.querySelector('.delete').addEventListener('click',function openPopup(){
     document.querySelector('.popup').style.display="flex";
+    console.log('hello')
 })
 async function deleteAnnonce() {
         const token=sessionStorage.getItem('adminToken')
