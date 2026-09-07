@@ -126,6 +126,7 @@
         );
         const images =await response.json()
         images.forEach(image => {
+            console.log(image)
             document.querySelector('.c2').innerHTML+= `
                 <option value="${image}">${image}</option>
             `
