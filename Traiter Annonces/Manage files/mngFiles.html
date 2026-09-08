@@ -15,20 +15,44 @@
         width:100%;
         height:100%;
     }
+    .ajouterImage{
+        display:flex;
+        gap: 10px;
+        width: 100%;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+    }
     .images {
+        width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         align-content: center;
     }
-    .images a{
-        margin: 5px 5px 5px 5px;
+    .images div{
+        width:100%;
+        height: 100%;
+        justify-content: center;
+    }
+    .images div a{
+        width: 100%;
+        height: 100%;
+        margin: 5px 5px;
         display: flex;
         flex-direction: column;
-        text-align: center;
+        align-items: center;
+        box-shadow: 0 12px 12px rgba(0, 0,0,0);
     }
-    .images a img{
-        width: fit-content;
-        height: fit-content;
+    .images div a img{
+        height: 100px;
+        max-width: 100%;
+    }
+    .images div a p{
+        font-size: 10px;
+        color: #bbb;
+    }
+    .images div a:hover {
+        transform: translateY(-2px);
     }
 </style>
 <body>
@@ -55,8 +79,50 @@
 
 <body>
 <section >
-    <div class="ajouterImage"></div>
-    <div class="images"></div>
+    <div class="ajouterImage"><input type="file" class="imageInput" accept="image/*" placeholder="Image à ajouter"> <a class="tr-button"> Ajouter </a ><!--<a class="tr-button">Effacer</a>--></div>
+    <div class="images">
+       
+               <div> <a https:="" ngbsaqvegvwgqiyslaiz.supabase.co="" storage="" v1="" object="" public="" atsm-files="" images="" atsm.jpeg="">
+                    <img src="https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/atsm.jpeg">
+                    <p> atsm.jpeg </p>
+                </a></div>
+                
+               <div> <a https:="" ngbsaqvegvwgqiyslaiz.supabase.co="" storage="" v1="" object="" public="" atsm-files="" images="" camp-summer-2026.png="">
+                    <img src="https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/camp-summer-2026.png">
+                    <p> camp-summer-2026.png </p>
+                </a></div>
+                
+               <div> <a https:="" ngbsaqvegvwgqiyslaiz.supabase.co="" storage="" v1="" object="" public="" atsm-files="" images="" fijm2026.png="">
+                    <img src="https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/fijm2026.png">
+                    <p> fijm2026.png </p>
+                </a></div>
+                
+               <div> <a https:="" ngbsaqvegvwgqiyslaiz.supabase.co="" storage="" v1="" object="" public="" atsm-files="" images="" fijm2026group.jpg="">
+                    <img src="https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/fijm2026Group.jpg">
+                    <p> fijm2026Group.jpg </p>
+                </a></div>
+                
+               <div> <a https:="" ngbsaqvegvwgqiyslaiz.supabase.co="" storage="" v1="" object="" public="" atsm-files="" images="" hommage.jpg="">
+                    <img src="https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/hommage.jpg">
+                    <p> hommage.jpg </p>
+                </a></div>
+                
+               <div> <a https:="" ngbsaqvegvwgqiyslaiz.supabase.co="" storage="" v1="" object="" public="" atsm-files="" images="" imo2026.jpg="">
+                    <img src="https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/imo2026.jpg">
+                    <p> imo2026.jpg </p>
+                </a></div>
+                
+               <div> <a https:="" ngbsaqvegvwgqiyslaiz.supabase.co="" storage="" v1="" object="" public="" atsm-files="" images="" imo2026team.jpg="">
+                    <img src="https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/imo2026Team.jpg">
+                    <p> imo2026Team.jpg </p>
+                </a></div>
+                
+               <div> <a https:="" ngbsaqvegvwgqiyslaiz.supabase.co="" storage="" v1="" object="" public="" atsm-files="" images="" pamo2026.jpg="">
+                    <img src="https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/pamo2026.jpg">
+                    <p> pamo2026.jpg </p>
+                </a></div>
+                
+    </div>
 </section>
 <!--<script src="../checkToken.js"></script>-->
 <script>
@@ -72,20 +138,49 @@
                 },
             }
         );
-        console.log(response)
+        /*console.log(response)
         const images =await response.json()
         console.log(images)
             images.forEach(image => {
             if (image.name[0]!==".") {
                 document.querySelector('.images').innerHTML+= `
-                <a https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/${image.name}>
+                <a href="https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/${image.name}">
                     <img src='https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/${image.name}'>
                     <p> ${image.name} </p>
                 </a>
                 `
-            }});
+            }});*/
         }
     showImages();
+</script>
+<script>
+    async function sendImage() {
+    const file = document.querySelector("imageInput").files[0];
+
+    if (!file) {
+        alert("Select an image");
+        return;
+    }
+
+    if (file.size > 500 * 1024) {
+        alert("Image must be under 500 KB");
+        return;
+    }
+
+    const formData = new FormData();
+
+    formData.append("image", file);
+    const token=sessionStorage.getItem('adminToken')
+    const response = await fetch("https://atsm-backend.onrender.com/uploadImage", {
+        method: "POST",
+        headers: {'Authorization' : 'Bearer ${toke}'},
+        body: formData
+    });
+
+    const result = await response.json();
+
+    console.log(result);
+}
 </script>
 </body>
 </html>
