@@ -24,7 +24,7 @@ body{
     transform: translateY(25px);
     animation: appear 0.8s ease-out forwards;
 }*/
-.tr-button{
+.tr-button{ 
         border: 1px black solid;
         text-decoration: none;
         font-size: 14px;

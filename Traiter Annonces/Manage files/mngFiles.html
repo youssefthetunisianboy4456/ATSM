@@ -1,0 +1,78 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ATSM</title>
+</head>
+ <style>
+    body {
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    section{
+        display: flex;
+        flex-direction: column;
+        width:100%;
+        height:100%;
+    }
+    .images {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        width:100px;
+    }
+</style>
+<body>
+    
+<link rel="stylesheet" href="../../Style/general-style.css">
+<link rel="stylesheet" href="../../Style/traiter-style.css">
+<script type="module">
+	import {HD} from '../../Style/header+footer.js'
+	HD(2)
+</script>
+<script>
+    function toggleMenu() {
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("active");
+
+        if (navLinks.classList.contains("active")) {
+            menuToggle.textContent = "✕";
+        } else {
+            menuToggle.textContent = "☰";
+        }
+    };
+</script>
+
+<body>
+<section >
+    <div class="ajouterImage"></div>
+    <div class="images"></div>
+</section>
+<!--<script src="../checkToken.js"></script>-->
+<script>
+    async function showImages() {
+        const token = sessionStorage.getItem('adminToken');
+        const response=await fetch(
+            'https://atsm-backend.onrender.com/imagesList', 
+            {
+                method: 'GET',
+
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                },
+            }
+        );
+        console.log(response)
+        const images =await response.json()
+        console.log(images)
+            images.forEach(image => {
+            if (image.name[0]!==".") {
+                document.querySelector('.images').innerHTML+= `
+                    <img src='https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/${image.name}'>
+                `
+            }});
+        }
+    fillImages();
+</script>
+</body>
+</html>
