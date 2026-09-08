@@ -80,49 +80,7 @@
 <body>
 <section >
     <div class="ajouterImage"><input type="file" class="imageInput" accept="image/*" placeholder="Image à ajouter"> <a class="tr-button"> Ajouter </a ><!--<a class="tr-button">Effacer</a>--></div>
-    <div class="images">
-       
-               <div> <a https:="" ngbsaqvegvwgqiyslaiz.supabase.co="" storage="" v1="" object="" public="" atsm-files="" images="" atsm.jpeg="">
-                    <img src="https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/atsm.jpeg">
-                    <p> atsm.jpeg </p>
-                </a></div>
-                
-               <div> <a https:="" ngbsaqvegvwgqiyslaiz.supabase.co="" storage="" v1="" object="" public="" atsm-files="" images="" camp-summer-2026.png="">
-                    <img src="https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/camp-summer-2026.png">
-                    <p> camp-summer-2026.png </p>
-                </a></div>
-                
-               <div> <a https:="" ngbsaqvegvwgqiyslaiz.supabase.co="" storage="" v1="" object="" public="" atsm-files="" images="" fijm2026.png="">
-                    <img src="https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/fijm2026.png">
-                    <p> fijm2026.png </p>
-                </a></div>
-                
-               <div> <a https:="" ngbsaqvegvwgqiyslaiz.supabase.co="" storage="" v1="" object="" public="" atsm-files="" images="" fijm2026group.jpg="">
-                    <img src="https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/fijm2026Group.jpg">
-                    <p> fijm2026Group.jpg </p>
-                </a></div>
-                
-               <div> <a https:="" ngbsaqvegvwgqiyslaiz.supabase.co="" storage="" v1="" object="" public="" atsm-files="" images="" hommage.jpg="">
-                    <img src="https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/hommage.jpg">
-                    <p> hommage.jpg </p>
-                </a></div>
-                
-               <div> <a https:="" ngbsaqvegvwgqiyslaiz.supabase.co="" storage="" v1="" object="" public="" atsm-files="" images="" imo2026.jpg="">
-                    <img src="https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/imo2026.jpg">
-                    <p> imo2026.jpg </p>
-                </a></div>
-                
-               <div> <a https:="" ngbsaqvegvwgqiyslaiz.supabase.co="" storage="" v1="" object="" public="" atsm-files="" images="" imo2026team.jpg="">
-                    <img src="https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/imo2026Team.jpg">
-                    <p> imo2026Team.jpg </p>
-                </a></div>
-                
-               <div> <a https:="" ngbsaqvegvwgqiyslaiz.supabase.co="" storage="" v1="" object="" public="" atsm-files="" images="" pamo2026.jpg="">
-                    <img src="https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/pamo2026.jpg">
-                    <p> pamo2026.jpg </p>
-                </a></div>
-                
-    </div>
+    <div class="images"></div>
 </section>
 <!--<script src="../checkToken.js"></script>-->
 <script>
@@ -138,18 +96,20 @@
                 },
             }
         );
-        /*console.log(response)
+        console.log(response)
         const images =await response.json()
         console.log(images)
             images.forEach(image => {
             if (image.name[0]!==".") {
                 document.querySelector('.images').innerHTML+= `
-                <a href="https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/${image.name}">
-                    <img src='https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/${image.name}'>
-                    <p> ${image.name} </p>
-                </a>
+                <div>
+                    <a href="https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/${image.name}">
+                        <img src='https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/${image.name}'>
+                        <p> ${image.name} </p>
+                    </a>
+                </div>
                 `
-            }});*/
+            }});
         }
     showImages();
 </script>
