@@ -20,9 +20,15 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
         align-content: center;
     }
-    .images img{
-        height:100px;
-        width: 90%;
+    .images a{
+        margin: 5px 5px 5px 5px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .images a img{
+        width: fit-content;
+        height: fit-content;
     }
 </style>
 <body>
@@ -72,7 +78,10 @@
             images.forEach(image => {
             if (image.name[0]!==".") {
                 document.querySelector('.images').innerHTML+= `
+                <a https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/${image.name}>
                     <img src='https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/${image.name}'>
+                    <p> ${image.name} </p>
+                </a>
                 `
             }});
         }
