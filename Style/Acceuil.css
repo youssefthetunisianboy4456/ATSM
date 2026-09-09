@@ -245,36 +245,25 @@
 }
 .services-section {
     background: #eeeeee;
-
     display: grid;
     grid-template-columns: 1.4fr 1fr;
     gap: 70px;
-
     padding: 70px 5%;
 }
-
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 55px 30px;
 }
-
-
-/* Individual item */
-
 .service-card {
     padding: 20px;
-
     background: transparent;
-
     color: #777;
-
     transition:
         background-color 0.3s ease,
         transform 0.3s ease,
         box-shadow 0.3s ease;
 }
-
 .service-card i {
     font-size: 27px;
     margin-bottom: 22px;
@@ -291,10 +280,6 @@
     line-height: 1.25;
     margin: 0;
 }
-
-
-/* HOVER */
-
 .service-card:hover {
     background: white;
 
@@ -308,10 +293,6 @@
 
     transform: scale(1.1);
 }
-
-
-/* Right box */
-
 .services-info {
     background-color: inherit;
     padding: 35px 32px;
