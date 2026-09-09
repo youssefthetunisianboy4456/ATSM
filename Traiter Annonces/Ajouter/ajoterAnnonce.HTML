@@ -4,6 +4,16 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>ATSM</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 </head>
  <style>
     body {
@@ -57,7 +67,12 @@
     </div>
     <div class="br-ta pressReport-div">
         <br>Texte principal :</br>
-        <textarea class="fill pressReport c4" id="fill"></textarea></div>
+        <textarea class="fill pressReport c4" id="fill"></textarea>
+    </div>
+    <div class="br-ta pressReport-div">
+        <br>Aperçu :</br>
+        <div class="get preview c4" id="get"></div>
+    </div>
     <div class="date-type">
         <div class="br-ta ">
             <p>Date :</p>
@@ -137,5 +152,21 @@
         }
     fillImages();
 </script>
+<script>
+    const input = document.getElementById("fill");
+    const preview = document.getElementById("get");
+    document.addEventListener("input", async (event) => {
+        if (event.target.id === "fill") {
+            const preview = document.getElementById("get");
+
+            MathJax.typesetClear([preview]);
+
+            preview.textContent = event.target.value;
+
+            await MathJax.typesetPromise([preview]);
+        } 
+});
+</script>
+
 </body>
 </html>
