@@ -5,11 +5,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/4.1.1/spin.min.js"></script>
     <script>
         window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']]
-            }
-        };
+                            loader: {
+                                load: ['[tex]/html']
+                            },
+                            tex: {
+                                packages: {
+                                    '[+]': ['html']
+                                },
+                                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+                            }
+                         };
     </script>
 
     <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
