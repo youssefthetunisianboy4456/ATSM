@@ -19,7 +19,7 @@ async function startWebsite() {
                     <div class="title-line"></div>
                 </div>
                 <div class="press-report" id="get">
-                    <p>${annonceDemande.pressReport}</p> 
+                    <p class="press-report-p" >${annonceDemande.pressReport}</p> 
                 </div>
             </div>
             <div class="div-image ${annonceDemande.image==='' ? `hide`:``} ">
@@ -28,6 +28,11 @@ async function startWebsite() {
         </div>
         ` 
         document.title=annonceDemande.mainText;
+        const report=document.querySelector('.press-report-p')
+        const x=report.textContent
+        MathJax.typesetClear([report]);
+        report.textContent=x
+        await MathJax.typesetPromise([report]);
     } else {
         alert('Document nf')
     }

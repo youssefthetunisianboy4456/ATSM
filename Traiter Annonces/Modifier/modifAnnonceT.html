@@ -247,6 +247,13 @@
         document.querySelector(`.c${4}`).value=annonceTrouvee.pressReport
         document.querySelector(`.c${5}`).value=annonceTrouvee.date
         document.querySelector(`.c${6}`).value=annonceTrouvee.type
+        const preview = document.getElementById("get");
+
+        MathJax.typesetClear([preview]);
+
+        preview.textContent = event.target.value;
+
+        await MathJax.typesetPromise([preview]);
     }
     async function fillImages() {
         const token = sessionStorage.getItem('adminToken');
@@ -336,7 +343,7 @@
 <script>
     const input = document.getElementById("fill");
     const preview = document.getElementById("get");
-    document.addEventListener("change", async (event) => {
+    document.addEventListener("input", async (event) => {
         if (event.target.id === "fill") {
             const preview = document.getElementById("get");
 
