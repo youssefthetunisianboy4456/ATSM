@@ -338,7 +338,9 @@
         grid-template-columns: 1fr;
     }
     .services-section {
-        padding: 50px 20px;
+        padding-top:  50px;
+        padding-right: 0px;
+        padding-left: 0px;
     }
     .services-grid {
         grid-template-columns: 1fr;
@@ -350,7 +352,5 @@
     }
     .services-info {
         margin-top: 20px;
-        margin-left: 5px;
-        width: 90%;
     }
 }
