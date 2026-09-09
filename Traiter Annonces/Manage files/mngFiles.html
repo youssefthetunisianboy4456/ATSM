@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>ATSM</title>
+	<title>Géstionnaire des fichiers</title>
 </head>
  <style>
     body {
@@ -12,10 +12,14 @@
     section{
         display: flex;
         flex-direction: column;
+        margin-bottom: 20px;
         width:100%;
         height:100%;
     }
-    .ajouterImage{
+    h2{
+        margin-left: 5px;
+    }
+    .actions div{
         display:flex;
         gap: 10px;
         width: 100%;
@@ -30,11 +34,12 @@
         align-content: center;
     }
     .images div{
-        width:100%;
+        max-width:100%;
         height: 100%;
         justify-content: center;
     }
     .images div a{
+        text-decoration: none;
         width: 100%;
         height: 100%;
         margin: 5px 5px;
@@ -47,12 +52,78 @@
         height: 100px;
         max-width: 100%;
     }
-    .images div a p{
+    .images div div{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        gap : 5px;
+    }
+    .images div div p{
         font-size: 10px;
         color: #bbb;
     }
+    .images div div input{
+        cursor: pointer;
+    }
     .images div a:hover {
         transform: translateY(-2px);
+    }
+    .popup-background{
+        display:none;
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,0.25);
+        backdrop-filter:blur(6px);
+        z-index:1000;
+
+        justify-content:center;
+        align-items:center;
+    }
+    .popup-box{
+        background:white;
+        padding:30px;
+        border-radius:15px;
+        width:300px;
+        align-items:center;
+        text-align:center;
+    }
+    .div-bp{
+        display: flex;
+        justify-content: space-between;
+        gap:10px;
+    }
+    .div-bp button {
+        border: none;
+        border-radius: 3px;
+        padding: 14px 27px;
+        font-size: 14px;
+        transition:
+            background 0.2s,
+            color 0.2s,
+            transform 0.2s;
+        text-decoration: none;
+    }
+    .div-bp button:hover {
+        transform: translateY(-2px);
+    }
+    .cancel {
+        color: black;
+        background-color: none;
+    }
+    .cancel:hover {
+        color: white;
+        background-color: black;
+    }
+    .proceed {
+        color: red;
+        background-color: white;
+    }
+    .proceed:hover{
+        color:white;
+        background-color: red;
     }
 </style>
 <body>
@@ -78,10 +149,37 @@
 </script>
 
 <body>
-<section >
-    <div class="ajouterImage"><input type="file" class="imageInput" accept="image/*" placeholder="Image à ajouter"> <a class="tr-button" onclick="sendImage()"> Ajouter </a ><!--<a class="tr-button">Effacer</a>--></div>
+<section class="actions">
+    <h2>Actions à faire :</h2>
+    <div class="ajouterImage">
+        Ajouter une image :
+        <input type="file" class="imageInput" accept="image/*"> 
+        <a class="tr-button" onclick="sendImage()"> Ajouter </a >
+    </div>
+    <div class="effacerImage">
+        <p>Effacer une image : </p>
+        <a class="tr-button del" onclick="
+            const checkedImages=document.querySelectorAll('.delete:checked')
+            if (checkedImages.length===0) {
+                alert('Aucune image selectionnée')
+            } else {
+                document.getElementById('popup').style.display='flex'
+            }">Effacer</a>
+    </div>
+</section>
+<section>
+    <h2>Toutes les images : </h2>
     <div class="images"></div>
 </section>
+<div class="popup-background " id="popup">
+    <div class="popup-box">
+        <h2>Etes-vous surs d'effacer ces images ?</h2>
+        <div class="div-bp">
+            <button class="cancel" onclick="document.getElementById('popup').style.display='none'">Annuler</button>
+            <button class="proceed " onclick="deleteImages()">Effacer</button>
+        </div>
+    </div>
+</div>
 <!--<script src="../checkToken.js"></script>-->
 <script>
     async function showImages() {
@@ -96,16 +194,14 @@
                 },
             }
         );
-        console.log(response)
         const images =await response.json()
-        console.log(images)
             images.forEach(image => {
             if (image.name[0]!==".") {
                 document.querySelector('.images').innerHTML+= `
                 <div>
                     <a href="https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/${image.name}">
                         <img src='https://ngbsaqvegvwgqiyslaiz.supabase.co/storage/v1/object/public/atsm-files/Images/${image.name}'>
-                        <p> ${image.name} </p>
+                        <div><p> ${image.name} </p><input class="delete" type="checkbox" value="${image.name}"></div>
                     </a>
                 </div>
                 `
@@ -114,7 +210,7 @@
     showImages();
 </script>
 <script>
-    async function sendImage() {
+async function sendImage() {
     const file = document.querySelector('.imageInput').files[0];
 
     if (!file) {
@@ -141,6 +237,32 @@
 
     console.log(result);
 }
+async function deleteImages() {
+    const checkedImages=document.querySelectorAll('.delete:checked')
+    if (checkedImages.length!== 0) {
+        const checkedNames=[...checkedImages].map(x => x.value)
+        const token=sessionStorage.getItem('adminToken')
+        const response = await fetch("https://atsm-backend.onrender.com/deleteImages", {
+            method: "POST",
+            headers: {
+                'Content-Type' : 'application/json',
+                'Authorization' : `Bearer ${token}`
+            },
+            body: JSON.stringify(checkedNames)
+        });
+        console.log(response.json())
+    } else {
+        alert('Aucune image choisie')
+    }
+}
+/*document.querySelector('.del').disabled=true;
+const boxes=document.querySelectorAll('.delete');
+boxes.forEach(box => {
+    box.addEventListener('change',() =>{
+        const ch=document.querySelectorAll('.delete:checked')
+        document.querySelector('.del').disabled=ch.length ===0;
+    })
+})*/
 </script>
 </body>
 </html>
