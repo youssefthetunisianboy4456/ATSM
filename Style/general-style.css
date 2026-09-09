@@ -25,12 +25,12 @@ body{
     animation: appear 0.8s ease-out forwards;
 }*/
 .tr-button{ 
-        border: 1px black solid;
+        border: 1px darkblue solid;
         text-decoration: none;
         font-size: 14px;
         padding:14px 14px;
         background-color: white;
-        color: black;
+        color: darkblue;
         font-weight: bold;
         border-radius: 3px;
         transition:
