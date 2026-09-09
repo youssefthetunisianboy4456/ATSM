@@ -183,7 +183,7 @@
         <h2>Etes-vous surs d'effacer cette annonce</h2>
         <div class="div-bp">
             <button class="cancel" onclick="document.getElementById('delpop').style.display='none'">Annuler</button>
-            <button class="delete proceed tr-button" onclick="deleteAnnonce()" >Effacer</button>
+            <button class="delete proceed tr-button">Effacer</button>
         </div>
     </div>
 </div>
@@ -269,6 +269,9 @@
         await buildModif(id)
         modif.classList.remove("modif-hide");
         modif.classList.add("modif-show");
+    })
+    document.querySelector('.delete').addEventListener('click', () => {
+        deleteAnnonce(id)
     })
     document.querySelector('.update').addEventListener('click' , async function update() {
         let x=['']
