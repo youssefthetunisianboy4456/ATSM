@@ -4,6 +4,16 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 	<title></title>
 </head>
 <link rel="stylesheet" href="../../Style/general-style.css">
@@ -45,6 +55,11 @@
 			menuToggle.textContent = "☰";
 		}
 	};
+</script>
+<script>
+	const output = document.getElementById("get");
+	MathJax.typesetClear([output]);
+	await MathJax.typesetPromise([output]);
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </html>

@@ -18,7 +18,7 @@ async function startWebsite() {
                     <h1 class="title">${annonceDemande.mainText}</h1>
                     <div class="title-line"></div>
                 </div>
-                <div class="press-report">
+                <div class="press-report" id="get">
                     <p>${annonceDemande.pressReport}</p> 
                 </div>
             </div>

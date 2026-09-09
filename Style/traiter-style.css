@@ -26,21 +26,25 @@
     overflow-y: auto;     
     overflow-x: hidden;  
 }
-.preview{
+.br-ta div {
     height: 100px;
     padding: 8px;
     box-sizing: border-box;
-    resize: none;         
-    white-space: pre-wrap; 
+    resize: none;
+    white-space: pre-wrap;
     overflow-wrap: break-word;
-    overflow-y: auto;     
-    overflow-x: hidden;  
+    overflow-y: auto;
+    overflow-x: hidden;
     border: 1px solid black;
-    text-align: left;
     border-radius: 3px;
-}
-.preview mjx-container[display="true"] {
+    display: block;
     text-align: left !important;
+}
+
+.br-ta div mjx-container {
+    text-align: center !important;
+    margin-left:  auto !important;
+    margin-right: auto !important;
 }
 .input-latex-div {
     display: grid;
