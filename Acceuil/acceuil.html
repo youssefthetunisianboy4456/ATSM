@@ -11,6 +11,9 @@
 	HD(1)
 </script>
 <link rel="stylesheet" href="../Style/Acceuil.css">
+<style>
+	
+</style>
 <body>
 	<section class="overall">
 		<div class="overall-gap"></div>
@@ -19,7 +22,7 @@
 				L'Association tunisienne des sciences mathématiques
 			</span>
 			<p>
-				Développer les talents tunisiens pour représenter la Tunisie à l'international
+				Développer les mathématiques à la Tunisie
 			</p>
 			<div class="overall-buttons">
 				<a href="../Mission/mission.html" class="button">
@@ -28,6 +31,54 @@
 			</div>
 		</div>
 	</section>
+	<section class="services-section">
+
+    <div class="services-grid">
+
+        <div class="service-card">
+            <i class="fa-solid fa-cube"></i>
+            <h3>Développer Les<br>Mathématiques Par Le Jeu.</h3>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            <h3>Orienter La Pédagogie Vers<br>Le Problème.</h3>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-share-nodes"></i>
+            <h3>Faire Partager Le Plaisir De<br>La Recherche</h3>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-regular fa-lightbulb"></i>
+            <h3>Jeux Mathématiques Et<br>Logiques</h3>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-life-ring"></i>
+            <h3>Olympiade</h3>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-gears"></i>
+            <h3>Rehausser L'image Des<br>Mathématiques</h3>
+        </div>
+
+    </div>
+
+
+    <div class="services-info">
+		<div class="slider">
+			<div class="slides">
+				<div class="slide"> <div><p>Olympiades mathématiques</p> <img src="../Images/IMOLogo.gif" ></div></div>
+				<div class="slide"><div><p> Jeux mathématiques et logiques</p><img src="../Images/cijmT.png"> </div></div>
+				<div class="slide"><div><p> Olympiades mathématiques</p> <img src="../Images/IMOLogo.gif" ></div></section>
+			</div>
+			</div>
+    </div>
+
+</section>
 	<section class="annonces-section">
 	<div class="annonces-container">
 		<div class="multi-annonces">
@@ -66,6 +117,31 @@
 			menuToggle.textContent = "☰";
 		}
 	};
+	const slider = document.querySelector('.slider');
+	const slides = document.querySelector('.slides');
+	const slideList = document.querySelectorAll('.slide');
+
+	let currentSlide = 0;
+
+	function nextSlide() {
+		currentSlide+=1;
+		console.log(currentSlide)
+		document.querySelector('.slides').style.transition = 'transform 0.8s ease-in-out';
+
+		document.querySelector('.slides').style.transform =`translateX(-${currentSlide * 100}%)`;
+
+		if (currentSlide === 2) {
+			setTimeout(() => {
+				document.querySelector('.slides').style.transition = 'none';
+
+				currentSlide = 0;
+
+				document.querySelector('.slides').style.transform = 'translateX(0)';
+			}, 800);
+		}
+	}
+
+	setInterval(nextSlide, 3000);
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </body>
