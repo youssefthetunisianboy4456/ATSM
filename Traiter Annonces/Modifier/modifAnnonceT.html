@@ -120,19 +120,27 @@
         color:white;
         background-color: darkblue;
     }
+    .id-selector{
+        width: 100%;
+        justify-content: center;
+    }
+    .title-line{
+        width: 100px;
+    }
 </style>
 <body>
+<section class="id-selector">
      <h1>Modifier une annonce</h1>
 <div class="input-latex-div">
     <div class="br-ta img-selec">
         <p>Id :</p>
         <select class="annonce-select c0"></select>
     </div>
-    <div><button class="Trouver tr-button" >Trouver</button></div>
+    <div class="title-line"></div>
 </div>
+</section>
 <section class="modif modif-hide">
 <div class=""modif-content>
-<h1>Modifier annonce Trouvée</h1>
 <div class="input-latex-div">
     <div class="br-ta">
         <br>Titre :</br>
@@ -251,10 +259,11 @@
         closePopup()
         location.reload() 
     }
+    const id=0
     const idSelec=document.querySelector('.c0')
     const modif=document.querySelector('.modif')
     idSelec.addEventListener('change', async () => {
-        const id=idSelec.value
+        id=idSelec.value
         modif.classList.remove("modif-show");
         modif.classList.add("modif-hide");
         await buildModif(id)
