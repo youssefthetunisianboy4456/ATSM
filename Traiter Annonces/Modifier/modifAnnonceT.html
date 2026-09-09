@@ -270,8 +270,9 @@
         modif.classList.remove("modif-hide");
         modif.classList.add("modif-show");
     })
-    document.querySelector('.delete').addEventListener('click', () => {
-        deleteAnnonce(id)
+    document.querySelector('.delete').addEventListener('click', async () => {
+        await deleteAnnonce(id)
+        location.reload()
     })
     document.querySelector('.update').addEventListener('click' , async function update() {
         let x=['']
