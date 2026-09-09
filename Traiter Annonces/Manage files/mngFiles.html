@@ -251,6 +251,7 @@ async function deleteImages() {
             body: JSON.stringify(checkedNames)
         });
         console.log(response.json())
+        location.reload()
     } else {
         alert('Aucune image choisie')
     }
