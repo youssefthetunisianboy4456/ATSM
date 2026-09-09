@@ -126,7 +126,6 @@
 
 	function nextSlide() {
 		currentSlide+=1;
-		console.log(currentSlide)
 		document.querySelector('.slides').style.transition = 'transform 0.8s ease-in-out';
 
 		document.querySelector('.slides').style.transform =`translateX(-${currentSlide * 100}%)`;

@@ -344,10 +344,13 @@
         grid-template-columns: 1fr;
         gap: 15px;
     }
+
     .service-card {
         padding: 20px;
     }
     .services-info {
         margin-top: 20px;
+        margin-left: 5px;
+        width: 90%;
     }
 }
