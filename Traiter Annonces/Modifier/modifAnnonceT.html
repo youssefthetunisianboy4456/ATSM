@@ -124,20 +124,26 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        justify-content: center;
+        align-items: center;
     }
     .title-line{
-        width: 100px;
+        width: 200px;
         height: 3px;
         background-color: darkblue;
+    }
+    .id-selector p{
+        size:10px;
+        font-style: italic;
+        color: #bbb;
     }
 </style>
 <body>
 <section class="id-selector">
-     <h1>Modifier une annonce</h1>
+     <h1>Gérer une actualité</h1>
+     <p> MODIFIER OU SUPPRIMER </p>
 <div class="input-latex-div">
     <div class="br-ta img-selec">
-        <p>Id :</p>
+        <p>Sélectionnez l'actualité à gérer :</p>
         <select class="annonce-select c0"></select>
     </div>
     <div class="title-line"></div>
