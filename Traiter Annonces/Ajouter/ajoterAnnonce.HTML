@@ -47,8 +47,30 @@
         }
     };
 </script>
+<style>
+    .enlarge{
+        height:300px;
+    }
+    div .makebig{
+        height: 300px;
+    }
+    .checker{
+        display:flex;
+        gap: 2px;
+        align-items: center;
+        justify-self: center;
+    }
+    .checker p {
+        margin: 0;
+    }
+    #bigmaker {
+        transform: translateY(3px);
+    }
+    select {
+        transform: translateY(3px);
+    }
+</style>
 
-<body>
 <header>
     <h1> Nouvelle Annonce </h1>
 </header>
@@ -63,7 +85,7 @@
             <textarea class="mainText c1"></textarea>
         </div>
     </div>
-    <div class="br-ta img-selec">
+    <div class="img-selec">
         <p>Fichier de l'image :</p>
         <select class="c2"></select>
     </div>
@@ -71,13 +93,20 @@
         <br>Commentaire :</br>
         <textarea class="subText c3"></textarea>
     </div>
+     <div class="checker">
+            <p>Rendre le text principal plus grand :</p>
+            <input type="checkbox" onchange="
+                document.getElementById('fill').classList.toggle('enlarge');
+                preview = document.getElementById('get').classList.toggle('makebig');
+            " id="bigmaker">
+    </div>
     <div class="br-ta pressReport-div">
         <br>Texte principal :</br>
-        <textarea class="fill pressReport c4" id="fill"></textarea>
+        <textarea class="fill pressReport c4 " id="fill"></textarea>
     </div>
     <div class="br-ta pressReport-div">
         <br>Aperçu :</br>
-        <div class="get preview c4" id="get"></div>
+        <div class="get preview" id="get"></div>
     </div>
     <div class="date-type">
         <div class="br-ta ">
@@ -99,6 +128,9 @@
     <!--<div class="br-ta-Latex br-ta Latex Preview"></div>-->
     <div class="br-ta-Latex"><button class="add bt" onclick="add()" >Ajouter</button></div>
 </div>
+<script>
+    
+</script>
 <script src="./ajoterAnnonce.js"></script>
 <script src="../checkToken.js"></script>
 <script>
@@ -159,8 +191,8 @@
     fillImages();
 </script>
 <script>
-    const input = document.getElementById("fill");
-    const preview = document.getElementById("get");
+    let input = document.getElementById("fill");
+    let preview = document.getElementById("get");
     document.addEventListener("input", async (event) => {
         if (event.target.id === "fill") {
             const preview = document.getElementById("get");
@@ -171,8 +203,9 @@
 
             await MathJax.typesetPromise([preview]);
         } 
-});
-</script>
+    });
+    </script>
+
 
 </body>
 </html>

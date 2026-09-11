@@ -151,6 +151,27 @@
         font-style: italic;
         color: #bbb;
     }
+    .enlarge{
+        height:300px;
+    }
+    div .makebig{
+        height: 300px;
+    }
+    .checker{
+        display:flex;
+        gap: 2px;
+        align-items: center;
+        justify-self: center;
+    }
+    .checker p {
+        margin: 0;
+    }
+    #bigmaker {
+        transform: translateY(3px);
+    }
+    select {
+        transform: translateY(3px);
+    }
 </style>
 <body>
 <section class="id-selector">
@@ -178,6 +199,13 @@
     <div class="br-ta">
         <br>Commentaire :</divbr>
         <textarea class="subText c3"></textarea>
+    </div>
+     <div class="checker">
+            <p>Rendre le text principal plus grand :</p>
+            <input type="checkbox" onchange="
+                document.getElementById('fill').classList.toggle('enlarge');
+                preview = document.getElementById('get').classList.toggle('makebig');
+            " id="bigmaker">
     </div>
     <div class="br-ta pressReport-div">
         <br>Texte principal :</br>
@@ -340,8 +368,8 @@
     })
 </script>
 <script>
-    const input = document.getElementById("fill");
-    const preview = document.getElementById("get");
+    let input = document.getElementById("fill");
+    let preview = document.getElementById("get");
     document.addEventListener("input", async (event) => {
         if (event.target.id === "fill") {
             const preview = document.getElementById("get");
