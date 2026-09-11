@@ -29,7 +29,7 @@ async function startWebsite() {
         </div>
         ` 
         document.title=annonceDemande.mainText;
-        splitter(annonceDemande.pressReport,'get','scale=4, transform shape')
+        splitter(annonceDemande.pressReport,' scale=4 , transform shape')
     } else {
         alert('Document nf')
     }

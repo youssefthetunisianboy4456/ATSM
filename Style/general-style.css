@@ -8,6 +8,18 @@ body{
 		height: 100px;
 		align-self: center;
 }
+.preview {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: left !important;
+}
+.preview mjx-container {
+    text-align: center !important;
+    margin-left:  auto !important;
+    margin-right: auto !important;
+}
 .special-link{
 		text-decoration: none;
 		color: blue;
@@ -76,13 +88,13 @@ body{
     overflow: auto;
 }
 .preview svg {
-    width: 600px;
+    /*width: 600px;
     min-width: 600px;
-    height: auto;
+    height: auto;*/
     flex-shrink: 0;
-    max-width: none;
+   /* max-width: none;*/
     align-self: center;
-    height:100px;
+    /*height:100px;*/
 }
 
 .big-link {
