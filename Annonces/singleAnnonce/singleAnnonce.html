@@ -79,6 +79,8 @@ window.MathJax = {
 </script>
 
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@planktimerr/tikzjax@1.0.7/dist/fonts.css">
+<script src="https://cdn.jsdelivr.net/npm/@planktimerr/tikzjax@1.0.7/dist/tikzjax.js"></script>
 	<title></title>
 </head>
 <link rel="stylesheet" href="../../Style/general-style.css">
@@ -121,11 +123,6 @@ window.MathJax = {
 			menuToggle.textContent = "☰";
 		}
 	};
-</script>
-<script>
-	const output = document.getElementById("get");
-	MathJax.typesetClear([output]);
-	await MathJax.typesetPromise([output]);
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </html>
