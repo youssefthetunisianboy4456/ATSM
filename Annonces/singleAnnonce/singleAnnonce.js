@@ -23,8 +23,8 @@ async function startWebsite() {
                     <div class="press-report-p preview" id="get" ></div> 
                 </div>
             </div>
-            <div class="div-image ${annonceDemande.image==='' ? `hide`:``} ">
-                ${annonceDemande.image==='' ? `<img class="hide">`:`<img class="img" src="${annonceDemande.imageURL}">`}
+            <div class="div-image ${annonceDemande.image==='' || annonceDemande.type==="release" ? `hide`:``} ">
+                ${annonceDemande.image==='' || annonceDemande.type==="release" ? `<img class="hide">`:`<img class="img" src="${annonceDemande.imageURL}">`}
             </div>
         </div>
         ` 
