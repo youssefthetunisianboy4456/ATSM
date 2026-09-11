@@ -4,27 +4,80 @@
 	<title>Modifier une annonce</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/4.1.1/spin.min.js"></script>
     <script>
-        window.MathJax = {
-                            loader: {
-                                load: ['[tex]/html']
-                            },
-                            tex: {
-                                packages: {
-                                    '[+]': ['html']
-                                },
-                                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                                displayMath: [['$$', '$$'], ['\\[', '\\]']]
-                            },
-                             output: {
-                                displayOverflow: 'linebreak',
-                                linebreaks: {
-                                    width: '100%'
-                                }
-                             }
-                         };
-    </script>
+window.MathJax = {
+    loader: {
+        load: [
+            '[tex]/html',
+            '[tex]/mathtools',
+            '[tex]/color',
+            '[tex]/physics',
+            '[tex]/cancel',
+            '[tex]/centernot',
+            '[tex]/cases',
+            '[tex]/empheq',
+            '[tex]/bbm',
+            '[tex]/dsfont',
+            '[tex]/braket'
+        ]
+    },
 
-    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    tex: {
+        packages: {
+            '[+]': [
+                'html',
+                'mathtools',
+                'color',
+                'physics',
+                'cancel',
+                'centernot',
+                'cases',
+                'empheq',
+                'bbm',
+                'dsfont',
+                'braket'
+            ]
+        },
+
+        inlineMath: [
+            ['$', '$'],
+            ['\\(', '\\)']
+        ],
+
+        displayMath: [
+            ['$$', '$$'],
+            ['\\[', '\\]']
+        ],
+
+        macros: {
+            NN: '\\mathbb{N}',
+            ZZ: '\\mathbb{Z}',
+            QQ: '\\mathbb{Q}',
+            RR: '\\mathbb{R}',
+            CC: '\\mathbb{C}',
+
+            abs: ['\\left|#1\\right|', 1],
+            norm: ['\\left\\lVert#1\\right\\rVert', 1],
+            floor: ['\\left\\lfloor#1\\right\\rfloor', 1],
+            ceil: ['\\left\\lceil#1\\right\\rceil', 1],
+
+            seg: ['\\overline{#1}', 1],
+            ray: ['\\overrightarrow{#1}', 1],
+            ang: ['\\angle #1', 1],
+            dang: ['\\measuredangle #1', 1]
+        }
+    },
+
+    output: {
+        displayOverflow: 'linebreak',
+
+        linebreaks: {
+            width: '100%'
+        }
+    }
+};
+</script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 </head>
 <link rel="stylesheet" href="../../Style/general-style.css">
 <link rel="stylesheet" href="../../Style/traiter-style.css">
