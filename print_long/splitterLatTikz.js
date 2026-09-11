@@ -12,17 +12,25 @@ export async function splitter(x,b,c) {
             let pos1 = x.slice(pos).indexOf("-end");
             y.push(x.slice(0, pos));
             x = x.slice(pos);
+            let pos2=x.indexOf(']')
+            if (x[6]==="[" && pos2!==-1 && pos2<pos1){
+                y.push(x.slice(7,pos2))
+                x=x.slice(0,6)+x.slice(pos2+1)
+            } else {
+                y.append('')
+            }
+            pos1=x.indexOf('-end')
             y.push(x.slice(0, pos1 + 4));
             x = x.slice(pos1 + 4);
         }
     }
     y.forEach((part,i) => {
-        if (i%2===0) {
+        if (i%3===0) {
             const latex = document.createElement("p");
             latex.className="latexP"
             latex.textContent = part;
             output.appendChild(latex);
-        } else {
+        } else if (i%3=== 2){
             const tikz = document.createElement("script");
             tikz.type = "text/tikz";
             tikz.setAttribute("data-tikz-libraries","calc,angles,quotes,intersections");
