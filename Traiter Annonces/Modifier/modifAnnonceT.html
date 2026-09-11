@@ -78,6 +78,8 @@ window.MathJax = {
 </script>
 
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@planktimerr/tikzjax@1.0.7/dist/fonts.css">
+<script src="https://cdn.jsdelivr.net/npm/@planktimerr/tikzjax@1.0.7/dist/tikzjax.js"></script>
 </head>
 <link rel="stylesheet" href="../../Style/general-style.css">
 <link rel="stylesheet" href="../../Style/traiter-style.css">
@@ -426,20 +428,16 @@ window.MathJax = {
         location.reload();
     })
 </script>
-<script>
+
+<script type="module" >
+    import {splitter} from "../../print_long/splitterLatTikz.js"
     let input = document.getElementById("fill");
     let preview = document.getElementById("get");
     document.addEventListener("input", async (event) => {
         if (event.target.id === "fill") {
-            const preview = document.getElementById("get");
-
-            MathJax.typesetClear([preview]);
-
-            preview.textContent = event.target.value;
-
-            await MathJax.typesetPromise([preview]);
+            splitter(input.value,'get','scale=4, transform shape')
         } 
-});
+    });
 </script>
 </body>
 </html>

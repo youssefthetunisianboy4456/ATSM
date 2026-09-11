@@ -79,6 +79,8 @@ window.MathJax = {
 </script>
 
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@planktimerr/tikzjax@1.0.7/dist/fonts.css">
+<script src="https://cdn.jsdelivr.net/npm/@planktimerr/tikzjax@1.0.7/dist/tikzjax.js"></script>
 </head>
  <style>
     body {
@@ -191,7 +193,7 @@ window.MathJax = {
     
 </script>
 <script src="./ajoterAnnonce.js"></script>
-<script src="../checkToken.js"></script>
+<!--<script src="../checkToken.js"></script>-->
 <script>
     async function add() {
         let x=[]
@@ -249,18 +251,13 @@ window.MathJax = {
         }
     fillImages();
 </script>
-<script>
+<script type="module" >
+    import {splitter} from "../../print_long/splitterLatTikz.js"
     let input = document.getElementById("fill");
     let preview = document.getElementById("get");
     document.addEventListener("input", async (event) => {
         if (event.target.id === "fill") {
-            const preview = document.getElementById("get");
-
-            MathJax.typesetClear([preview]);
-
-            preview.textContent = event.target.value;
-
-            await MathJax.typesetPromise([preview]);
+            splitter(input.value,'get','scale=4, transform shape')
         } 
     });
     </script>

@@ -67,6 +67,23 @@ body{
     align-items: center;
     gap: 25px;
 }
+ #get{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.preview {
+    overflow: auto;
+}
+.preview svg {
+    width: 600px;
+    min-width: 600px;
+    height: auto;
+    flex-shrink: 0;
+    max-width: none;
+    align-self: center;
+    height:100px;
+}
 
 .big-link {
     text-decoration: none;

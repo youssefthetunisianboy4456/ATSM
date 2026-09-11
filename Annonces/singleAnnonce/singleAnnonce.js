@@ -1,4 +1,5 @@
 import { loadAnnonces } from "../annonceList.js";
+import {splitter} from  "../../print_long/splitterLatTikz.js"
 
 
 async function startWebsite() {
@@ -18,8 +19,8 @@ async function startWebsite() {
                     <h1 class="title">${annonceDemande.mainText}</h1>
                     <div class="title-line"></div>
                 </div>
-                <div class="press-report" id="get">
-                    <p class="press-report-p" >${annonceDemande.pressReport}</p> 
+                <div class="press-report" >
+                    <div class="press-report-p preview" id="get" ></div> 
                 </div>
             </div>
             <div class="div-image ${annonceDemande.image==='' ? `hide`:``} ">
@@ -28,11 +29,7 @@ async function startWebsite() {
         </div>
         ` 
         document.title=annonceDemande.mainText;
-        const report=document.querySelector('.press-report-p')
-        const x=report.textContent
-        MathJax.typesetClear([report]);
-        report.textContent=x
-        await MathJax.typesetPromise([report]);
+        splitter(annonceDemande.pressReport,'get','scale=4, transform shape')
     } else {
         alert('Document nf')
     }
