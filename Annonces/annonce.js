@@ -17,7 +17,7 @@ async function startWebsite() {
     // Wait for Supabase and receive the actual array
     const annonces = (await loadAnnonces());
     let annonceText=''
-    annonceText = reserveType(annonces,['upcoming','passed','competiton','stage','release','test']).join("");
+    annonceText = reserveType(annonces,['upcoming','passed','competiton','stage','release','test','journal']).join("");
     
     const container = document.querySelector(".annonces");
 

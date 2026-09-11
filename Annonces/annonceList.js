@@ -12,6 +12,8 @@ export function mapType(x) {
       return 'Nouveau defi'
     case 'test' :
       return 'Test de sélection'
+      case 'journal' :
+        return 'Journal'
   }
 }
 /*export async function loadAnnonces() {
